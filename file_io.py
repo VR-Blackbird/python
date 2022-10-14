@@ -8,7 +8,7 @@ def read_into_buffer(filename):
     return buf
 
 
-with open("sample.bin", "wb") as f:
+with open("helper_files/sample.bin", "wb") as f:
     f.write(b"Hello world")
 
 buf = read_into_buffer("sample.bin")
