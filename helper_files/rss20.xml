@@ -1,0 +1,1457 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<channel>
+	<title>Planet Python</title>
+	<link>http://planetpython.org/</link>
+	<language>en</language>
+	<description>Planet Python - http://planetpython.org/</description>
+
+<item>
+	<title>IslandT: Python Example — Replace words within a list, and then sort the entire list and turn it into a string</title>
+	<guid>https://islandtropicaman.com/wp/2022/10/14/python-example-replace-words-within-a-list-and-then-sort-the-entire-list-and-turn-it-into-a-string/</guid>
+	<link>https://islandtropicaman.com/wp/2022/10/14/python-example-replace-words-within-a-list-and-then-sort-the-entire-list-and-turn-it-into-a-string/</link>
+	<description>&lt;p&gt;In this example, let us create a python program that will replace words within a list, and then sort the entire list and turn it into a string. Below is the entire program.&lt;/p&gt;
+&lt;pre class=&quot;brush: php; title: ; notranslate&quot;&gt;
+def rewrite(word):
+    return word.replace(&amp;quot;fat&amp;quot;,&amp;quot;slim&amp;quot;)
+
+def arrange():
+    whoami = [&amp;quot;I&amp;quot;, &amp;quot;am&amp;quot;, &amp;quot;old&amp;quot;, &amp;quot;and&amp;quot;, &amp;quot;fat&amp;quot;, &amp;quot;and&amp;quot;, &amp;quot;have&amp;quot;, &amp;quot;no&amp;quot;, &amp;quot;girl friend!&amp;quot;]
+    return ' '.join(sorted([rewrite(word) for word in whoami]))
+
+print(arrange()) # I am and and girl friend! have no old slim
+&lt;/pre&gt;
+&lt;p&gt;Now let us analyze the above functions line by line.&lt;/p&gt;
+&lt;p&gt;1) The rewrite function will replace the word &amp;#8216;fat&amp;#8217; with &amp;#8216;slim&amp;#8217;.&lt;br /&gt;
+2) The arrange function will create a new list while replacing one of the old list items as mentioned in 1 through the for loop and then sorted the entire list and returns the string version of the sorted list.&lt;/p&gt;
+&lt;p&gt;Phew, lots of details here in the simple program, you might want to read the sorted function on another Python tutorial site to understand how this function actually works. &lt;/p&gt;</description>
+	<pubDate>Fri, 14 Oct 2022 13:22:33 +0000</pubDate>
+</item>
+<item>
+	<title>Real Python: The Real Python Podcast – Episode #129: Using an Ellipsis in Python &amp;amp; Goals for CPython 3.12</title>
+	<guid>https://realpython.com/podcasts/rpp/129/</guid>
+	<link>https://realpython.com/podcasts/rpp/129/</link>
+	<description>&lt;p&gt;Where should you use an ellipsis in Python? How does it behave as a placeholder in a script, project, or stub file? What are the next goals for the Faster CPython project? This week on the show, Christopher Trudeau is here, bringing another batch of PyCoder's Weekly articles and projects.&lt;/p&gt;
+        &lt;hr /&gt;
+        &lt;p&gt;&lt;em&gt;[ Improve Your Python With 🐍 Python Tricks 💌 – Get a short &amp;amp; sweet Python Trick delivered to your inbox every couple of days. &lt;a href=&quot;https://realpython.com/python-tricks/?utm_source=realpython&amp;utm_medium=rss&amp;utm_campaign=footer&quot;&gt;&amp;gt;&amp;gt; Click here to learn more and see examples&lt;/a&gt; ]&lt;/em&gt;&lt;/p&gt;</description>
+	<pubDate>Fri, 14 Oct 2022 12:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>PyCharm: PyCon Portugal 2022 trip report</title>
+	<guid>https://blog.jetbrains.com/pycharm/2022/10/pycon-portugal-2022-trip-report/</guid>
+	<link>https://blog.jetbrains.com/pycharm/2022/10/pycon-portugal-2022-trip-report/</link>
+	<description>&lt;p&gt;This year saw the premier of the first ever &lt;a href=&quot;https://2022.pycon.pt/&quot;&gt;PyCon Portugal&lt;/a&gt;! With &lt;a href=&quot;https://2022.djangocon.eu/&quot;&gt;DjangoCon Europe&lt;/a&gt; being hosted in Porto this year, the organizers took the opportunity to piggyback off of this conference and set up a PyCon in this beautiful country. I was lucky enough to be selected as one of the speakers, and it was great to be able to contribute to the success of the day in my own small way.&lt;/p&gt;
+
+
+
+&lt;h2&gt;Arrival&lt;/h2&gt;
+
+
+
+&lt;p&gt;I flew into Porto following &lt;a href=&quot;https://bigdataldn.com/&quot;&gt;Big Data LDN&lt;/a&gt; with an easy, direct flight from London. Facing equally long lines to grab a taxi or buy a tram ticket, I opted for the tram, which dropped me off just 15 minutes’ walk from my hotel. However, what I didn’t bargain for is how hilly Porto is, meaning I ended up having quite an adventure dragging my 20 kg suitcase up and down steep, narrow footpaths. I learned my lesson and took a taxi on the way back to the airport!&lt;/p&gt;
+
+
+
+&lt;img width=&quot;2800&quot; height=&quot;2108&quot; src=&quot;https://blog.jetbrains.com/wp-content/uploads/2022/10/PXL_20220925_130008021-2800x2108.jpg&quot; alt=&quot;&quot; class=&quot;wp-image-286833&quot; /&gt;
+
+
+
+&lt;p&gt;&lt;a href=&quot;https://www.chicandbasic.com/en/hotel-gravity-porto/&quot;&gt;My hotel&lt;/a&gt; was definitely worth the walk, though. The staff were incredibly kind – they even served me a glass of port while I was waiting in reception! With the afternoon free, I headed out to explore Porto’s spectacular old town, Ribeira. I capped off the day with a stop at a bar for some wine and petiscos, Portugal’s version of tapas.&lt;/p&gt;
+
+
+
+&lt;div class=&quot;wp-block-embed__wrapper&quot;&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Finally landed in Porto and getting refuelled for &lt;a href=&quot;https://twitter.com/PyConPT?ref_src=twsrc%5Etfw&quot;&gt;@PyConPT&lt;/a&gt; tomorrow! This city is amazing 😍 &lt;a href=&quot;https://t.co/hXOEmBUb70&quot;&gt;pic.twitter.com/hXOEmBUb70&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jodie Burchell 🇦🇺🇩🇪 (@t_redactyl) &lt;a href=&quot;https://twitter.com/t_redactyl/status/1573314074330505216?ref_src=twsrc%5Etfw&quot;&gt;September 23, 2022&lt;/a&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+
+
+
+&lt;h2&gt;Conference day&lt;/h2&gt;
+
+
+
+&lt;p&gt;As this was their first time running this conference, the organizers sensibly decided to keep it small, running it for one day with two tracks (one for talks and the other for workshops). Despite the size of the event, the attendance was impressive, with around 250 people. It was held at the Computer Sciences department at the University of Porto, which was an ideal venue with a large well-appointed lecture theater for the talks, another large room for the workshops, and plenty of space inside and outside for socializing.&lt;/p&gt;
+
+
+
+&lt;div class=&quot;wp-block-embed__wrapper&quot;&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Fun and games at &lt;a href=&quot;https://twitter.com/PyConPT?ref_src=twsrc%5Etfw&quot;&gt;@PyConPT&lt;/a&gt; &lt;a href=&quot;https://t.co/tpQagsq9bv&quot;&gt;pic.twitter.com/tpQagsq9bv&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jodie Burchell 🇦🇺🇩🇪 (@t_redactyl) &lt;a href=&quot;https://twitter.com/t_redactyl/status/1573704875581620224?ref_src=twsrc%5Etfw&quot;&gt;September 24, 2022&lt;/a&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+
+
+
+&lt;p&gt;We kicked off with an inspirational keynote from &lt;a href=&quot;https://twitter.com/evildmp&quot;&gt;Daniele Procida&lt;/a&gt; about what it means to be a developer. This is definitely a talk that I’ll be thinking about for a long time.&lt;/p&gt;
+
+
+
+&lt;p&gt;Next up, speakers from &lt;a href=&quot;https://holistic-insights.github.io/&quot;&gt;Holin&lt;/a&gt; presented some of the ways they&amp;#8217;re using data science to improve the sustainability of cities. I especially loved their research on how to optimize dark corridors for bats to fly around Bristol! One of the things I studied in my undergraduate days was ecology, so this really took me back.&lt;/p&gt;
+
+
+
+&lt;div class=&quot;wp-block-embed__wrapper&quot;&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;This talk was great, and I had an awesome time chatting with the presenters afterwards about the best way to help bats make their way around Bristol 🦇 &lt;a href=&quot;https://t.co/4BWItnsH1A&quot;&gt;pic.twitter.com/4BWItnsH1A&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jodie Burchell 🇦🇺🇩🇪 (@t_redactyl) &lt;a href=&quot;https://twitter.com/t_redactyl/status/1573659211090857984?ref_src=twsrc%5Etfw&quot;&gt;September 24, 2022&lt;/a&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+
+
+
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/marcelotryle&quot;&gt;Marcelo Trylesinski&lt;/a&gt;, one of the core maintainers of &lt;a href=&quot;https://www.uvicorn.org/&quot;&gt;Uvicorn&lt;/a&gt; and &lt;a href=&quot;https://www.starlette.io/&quot;&gt;Starlette&lt;/a&gt;, told us the story of how he got involved in both projects. &lt;a href=&quot;https://twitter.com/ashmi_banerjee&quot;&gt;Ashmi Banerjee&lt;/a&gt; then showed us some cool tricks for automating things using Python, including a very brave live demo!&lt;/p&gt;
+
+
+
+&lt;div class=&quot;wp-block-embed__wrapper&quot;&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Super brave (and successful!) live demo by &lt;a href=&quot;https://twitter.com/ashmi_banerjee?ref_src=twsrc%5Etfw&quot;&gt;@ashmi_banerjee&lt;/a&gt; &lt;a href=&quot;https://t.co/pe9S2rVTRi&quot;&gt;pic.twitter.com/pe9S2rVTRi&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jodie Burchell 🇦🇺🇩🇪 (@t_redactyl) &lt;a href=&quot;https://twitter.com/t_redactyl/status/1573708782391246848?ref_src=twsrc%5Etfw&quot;&gt;September 24, 2022&lt;/a&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+
+
+
+&lt;p&gt;In the final part of the afternoon, we got a deep dive into how Python works under the hood from &lt;a href=&quot;https://twitter.com/coolandsmartrr&quot;&gt;Richard Rowland&lt;/a&gt;, and a very funny and insightful talk from &lt;a href=&quot;https://pretalx.evolutio.pt/pyconpt2022/talk/VSHP3V/&quot;&gt;Max Kahan&lt;/a&gt; about how to rescue a legacy project.&lt;/p&gt;
+
+
+
+&lt;div class=&quot;wp-block-embed__wrapper&quot;&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Hilarious and insightful talk from &lt;a href=&quot;https://twitter.com/max_does_tech?ref_src=twsrc%5Etfw&quot;&gt;@max_does_tech&lt;/a&gt; on rescuing a legacy project at &lt;a href=&quot;https://twitter.com/PyConPT?ref_src=twsrc%5Etfw&quot;&gt;@PyConPT&lt;/a&gt; 😊 &lt;a href=&quot;https://t.co/F6x7u3u4TN&quot;&gt;pic.twitter.com/F6x7u3u4TN&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jodie Burchell 🇦🇺🇩🇪 (@t_redactyl) &lt;a href=&quot;https://twitter.com/t_redactyl/status/1573703320195289088?ref_src=twsrc%5Etfw&quot;&gt;September 24, 2022&lt;/a&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+
+
+
+&lt;p&gt;I also gave my talk on how machine learning models understand text by demonstrating a couple of ways you can build a clickbait classifier (using PyCharm, of course!). The audience was great, and I got a bunch of very interesting questions afterwards. I also received a lovely gift consisting of a sampler pack of choice ports, which was very thoughtful and well-suited to the host city!&lt;/p&gt;
+
+
+
+&lt;img width=&quot;1280&quot; height=&quot;960&quot; src=&quot;https://blog.jetbrains.com/wp-content/uploads/2022/10/photo_2022-10-11-14.19.00.jpeg&quot; alt=&quot;&quot; class=&quot;wp-image-286844&quot; /&gt;
+
+
+
+&lt;p&gt;Following the talks, we had a pizza party at the conference venue, which was a nice chance to catch up with people I hadn’t had a chance to meet yet.&lt;/p&gt;
+
+
+
+&lt;div class=&quot;wp-block-embed__wrapper&quot;&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;And now it's time for a well deserved relaxing time! Just chillin'n chatting!&lt;br /&gt;Pycon Portugal 2022 is about to end &amp;amp; we promise to come back in 2023, better &amp;amp; better, in a new location.&lt;br /&gt;Be sure to stay tuned! Please, help us volunteering, sponsoring or presenting.&lt;a href=&quot;https://twitter.com/hashtag/pyconportugal?src=hash&amp;ref_src=twsrc%5Etfw&quot;&gt;#pyconportugal&lt;/a&gt; &lt;a href=&quot;https://t.co/jEXYjMiIlG&quot;&gt;pic.twitter.com/jEXYjMiIlG&lt;/a&gt;&lt;/p&gt;&amp;mdash; PyCon Portugal (@PyConPT) &lt;a href=&quot;https://twitter.com/PyConPT/status/1573724143048089602?ref_src=twsrc%5Etfw&quot;&gt;September 24, 2022&lt;/a&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+
+
+
+&lt;p&gt;I stayed for a few hours, enjoying the lovely weather and company, before heading off for a nightcap and calling it an evening.&lt;/p&gt;
+
+
+
+&lt;div class=&quot;wp-block-embed__wrapper&quot;&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;And &lt;a href=&quot;https://twitter.com/hashtag/PyconPortugal?src=hash&amp;ref_src=twsrc%5Etfw&quot;&gt;#PyconPortugal&lt;/a&gt; is a wrap! Now to get ready to fly to &lt;a href=&quot;https://twitter.com/hashtag/ndcoslo?src=hash&amp;ref_src=twsrc%5Etfw&quot;&gt;#ndcoslo&lt;/a&gt; on Monday. Can't wait to see you all there! &lt;a href=&quot;https://t.co/BuyRnTRQpZ&quot;&gt;pic.twitter.com/BuyRnTRQpZ&lt;/a&gt;&lt;/p&gt;&amp;mdash; Jodie Burchell 🇦🇺🇩🇪 (@t_redactyl) &lt;a href=&quot;https://twitter.com/t_redactyl/status/1573783009043664897?ref_src=twsrc%5Etfw&quot;&gt;September 24, 2022&lt;/a&gt;&lt;/blockquote&gt;
+&lt;/div&gt;
+
+
+
+&lt;p&gt;The first PyCon in Portugal was definitely a success. For the size of the conference there were a lot of attendees, and the talks were interesting and high quality. The group was very relaxed and friendly, and was a good mix of developers and data scientists. Next year, the organizers are planning to make it a larger conference in another Portuguese city. Having gotten a taste of how amazing Porto is, I’m looking forward to seeing what else Portugal has to offer in future PyCon Portugals!&lt;/p&gt;</description>
+	<pubDate>Fri, 14 Oct 2022 09:20:29 +0000</pubDate>
+</item>
+<item>
+	<title>Django Weblog: Nominations for 2022 Malcolm Tredinnick Memorial Prize</title>
+	<guid>https://www.djangoproject.com/weblog/2022/oct/14/nominations-for-2022-malcolm-tredinnick-memorial-p/</guid>
+	<link>https://www.djangoproject.com/weblog/2022/oct/14/nominations-for-2022-malcolm-tredinnick-memorial-p/</link>
+	<description>&lt;p&gt;Hello Everyone!&lt;/p&gt;
+
+&lt;p&gt;It is that time of year again when we recognize someone from our community in memory of our friend Malcolm.&lt;/p&gt;
+
+&lt;p&gt;Malcolm was an early core contributor to Django and had both a huge influence and impact on Django as we know it today. Besides being knowledgeable he was also especially friendly to new users and contributors. He exemplified what it means to be an amazing Open Source contributor. We still miss him to this day.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&quot;https://www.djangoproject.com/foundation/prizes/&quot;&gt;DSF Prize&lt;/a&gt; page summarizes the prize nicely:&lt;/p&gt;
+
+&lt;p&gt;The Malcolm Tredinnick Memorial Prize is a monetary prize, awarded annually, to the person who best exemplifies the spirit of Malcolm’s work - someone who welcomes, supports, and nurtures newcomers; freely gives feedback and assistance to others, and helps to grow the community. The hope is that the recipient of the award will use the award stipend as a contribution to travel to a community event -- a DjangoCon, a PyCon, a sprint -- and continue in Malcolm’s footsteps.&lt;/p&gt;
+
+We will take nominations until Thursday, October 30th, 2022, AoE, and will announce the winner soon after the next DSF Board meeting in December.
+
+Please make your nominations using this &lt;a href=&quot;https://docs.google.com/forms/d/1wocQLFGJQFrLOrGfIGjwUeXFc97jQyV7BLoMgkS8uOk&quot;&gt;google form&lt;/a&gt;.
+
+If you have any questions please reach out to the DSF Board at &lt;a href=&quot;mailto:foundation@djangoproject.com&quot;&gt;foundation@djangoproject.com&lt;/a&gt;.</description>
+	<pubDate>Fri, 14 Oct 2022 05:16:40 +0000</pubDate>
+</item>
+<item>
+	<title>Hynek Schlawack: How to Fix the set-output GitHub Actions Deprecation Warning</title>
+	<guid>https://hynek.me/til/set-output-deprecation-github-actions/</guid>
+	<link>https://hynek.me/til/set-output-deprecation-github-actions/</link>
+	<description>&lt;p&gt;If you have a &lt;em&gt;GitHub Actions&lt;/em&gt; workflow that sets an output using &lt;code&gt;echo ::set-output key=value&lt;/code&gt;, you have started to see an unhelpful deprecation warning. Here&amp;rsquo;s how to fix it.&lt;/p&gt;</description>
+	<pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>IslandT: Python Example — Write a python program which will save the user inputs into a Pickle file</title>
+	<guid>https://islandtropicaman.com/wp/2022/10/13/python-example-write-a-python-program-which-will-save-the-user-inputs-into-a-pickle-file/</guid>
+	<link>https://islandtropicaman.com/wp/2022/10/13/python-example-write-a-python-program-which-will-save-the-user-inputs-into-a-pickle-file/</link>
+	<description>&lt;p&gt;A pickle file with the pickle extension is a binary file where all the user inputs will get saved into this file in binary format. The pickle built-in module will be required in order to use the pickle&amp;#8217;s methods to save and retrieve the content into and from the pickle file.&lt;/p&gt;
+&lt;p&gt;Below is the python program which will get the input from a user and save it into the pickle file and then displays it on the screen again after retrieving it from the pickle file. The program below will create the pickle file for you if it has not been created yet but if there already has content inside the file then the old content will get replaced by the latest one.&lt;/p&gt;
+&lt;pre class=&quot;brush: php; title: ; notranslate&quot;&gt;
+import pickle
+
+poet = ''
+    
+    try:
+        poet = input(&amp;quot;Enter your poet: &amp;quot;)
+        with open(&amp;quot;poet.pickle&amp;quot;,'wb+') as f:
+            pickle.dump(poet, f) # put poet into the pickle file
+    except IOError as ioerror:
+        print(&amp;quot;Error occurred &amp;quot; + str(ioerror))
+
+    try:
+        with open(&amp;quot;poet.pickle&amp;quot;, &amp;quot;rb+&amp;quot;) as f:
+            poet = pickle.load(f) # retrieve poet from the pickle file
+            print(poet)
+    except IOError as ioerror:
+        print(&amp;quot;Error occurred &amp;quot; + str(ioerror))
+&lt;/pre&gt;
+&lt;p&gt;Now let us try it out&amp;#8230;&lt;/p&gt;
+&lt;pre class=&quot;brush: php; title: ; notranslate&quot;&gt;
+Enter your poet: I am a poor man who lives inside a homeless tent!
+I am a poor man who lives inside a homeless tent!
+&lt;/pre&gt;
+&lt;p&gt;Basically, a pickle file is just like a text file except it is in binary format instead of in text format.&lt;/p&gt;</description>
+	<pubDate>Thu, 13 Oct 2022 11:01:49 +0000</pubDate>
+</item>
+<item>
+	<title>Python Software Foundation: Join the Python Developers Survey 2022: Share and learn about the community</title>
+	<guid>http://pyfound.blogspot.com/2022/10/join-python-developers-survey-2022.html</guid>
+	<link>http://pyfound.blogspot.com/2022/10/join-python-developers-survey-2022.html</link>
+	<description>&lt;p&gt;This year we are conducting the sixth iteration of the official Python Developers Survey. The goal is to capture the current state of the language and the ecosystem around it. By comparing the results with last year’s, we can identify and share with everyone the hottest trends in the Python community and the key insights into it. We encourage you to contribute to our community’s knowledge. The survey should only take you about 10-15 minutes to complete. &lt;br /&gt;&lt;br /&gt;&lt;a href=&quot;https://surveys.jetbrains.com/s3/c1-python-developers-survey-2022&quot;&gt;Contribute to the Python Developers Survey 2022!&lt;/a&gt;&lt;/p&gt;&lt;p&gt;
+
+
+	
+	
+	
+	
+
+&lt;/p&gt;&lt;p&gt;
+The survey is organized in partnership between the Python Software Foundation and JetBrains. After the survey is over, we will publish the aggregated results and randomly choose 20 winners (among those who complete the survey in its entirety), who will each receive a $100 Amazon Gift Card or a local equivalent.&lt;/p&gt;
+
+&lt;p&gt;p { margin-bottom: 0.1in; line-height: 115%; background: transparent }a:link { color: #000080; so-language: zxx; text-decoration: underline }p { margin-bottom: 0.1in; line-height: 115%; background: transparent }a:link { color: #000080; so-language: zxx; text-decoration: underline }&lt;/p&gt;</description>
+	<pubDate>Thu, 13 Oct 2022 10:04:42 +0000</pubDate>
+</item>
+<item>
+	<title>Python Bytes: #305 Decorators need love too</title>
+	<guid>https://pythonbytes.fm/episodes/show/305/decorators-need-love-too</guid>
+	<link>https://pythonbytes.fm/episodes/show/305/decorators-need-love-too</link>
+	<description>&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;Watch the live stream:&amp;lt;/strong&amp;gt;&amp;lt;/p&amp;gt;
+
+&amp;lt;a href='https://www.youtube.com/watch?v=PWA4BJoBimY' style='font-weight: bold;'&amp;gt;Watch on YouTube&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;
+&amp;lt;br&amp;gt;
+
+&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;About the show&amp;lt;/strong&amp;gt;&amp;lt;/p&amp;gt;
+
+&amp;lt;p&amp;gt;Sponsored by &amp;lt;strong&amp;gt;&amp;lt;a href=&quot;http://pythonbytes.fm/foundershub2022&quot;&amp;gt;Microsoft for Startups Founders Hub&amp;lt;/a&amp;gt;&amp;lt;/strong&amp;gt;.&amp;lt;/p&amp;gt;
+
+&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;Michael #0&amp;lt;/strong&amp;gt;: &amp;lt;strong&amp;gt;&amp;lt;a href=&quot;https://python-bytes-static.nyc3.digitaloceanspaces.com/band-oct-2022.mp4&quot;&amp;gt;Scorpions concert&amp;lt;/a&amp;gt;&amp;lt;/strong&amp;gt;&amp;lt;/p&amp;gt;
+
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;Check out &amp;lt;a href=&quot;https://python-bytes-static.nyc3.digitaloceanspaces.com/band-oct-2022.mp4&quot;&amp;gt;&amp;lt;strong&amp;gt;this short video&amp;lt;/strong&amp;gt;&amp;lt;/a&amp;gt; if you're interested.&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+
+&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;Michael #1:&amp;lt;/strong&amp;gt; &amp;lt;a href=&quot;https://twitter.com/JeffersGlass/status/1575940781516673024?cxt=HBwWgMDS1dDy7t4rAAAA&amp;amp;amp;cn=ZmxleGlibGVfcmVjcw%3D%3D&amp;amp;amp;refsrc=email&quot;&amp;gt;&amp;lt;strong&amp;gt;Pyscript 2022.09.1 is out&amp;lt;/strong&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;
+
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;Beware of the breaking changes&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+
+&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;Brian #2:&amp;lt;/strong&amp;gt; &amp;lt;a href=&quot;https://nedbatchelder.com/blog/202210/decorator_shortcuts.html&quot;&amp;gt;&amp;lt;strong&amp;gt;Decorator shortcuts&amp;lt;/strong&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;
+
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;by Ned Batchelder&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+
+&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;Michael #3:&amp;lt;/strong&amp;gt; &amp;lt;a href=&quot;https://pyviz-dev.github.io/panel/user_guide/Running_in_Webassembly.html&quot;&amp;gt;&amp;lt;strong&amp;gt;Panel (of Holoviz) on Pyscript&amp;lt;/strong&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;
+
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;via Marc Skov Madsen&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;Panel can now run on pyodide and pyscript with no backend server.&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+
+&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;Brian #4:&amp;lt;/strong&amp;gt; &amp;lt;a href=&quot;https://github.com/MarcoGorelli/auto-walrus&quot;&amp;gt;&amp;lt;strong&amp;gt;auto-walrus&amp;lt;/strong&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;
+
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;Marco Gorelli&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;Also, a reminder about &amp;lt;a href=&quot;https://github.com/asottile/pyupgrade&quot;&amp;gt;pyupgrade&amp;lt;/a&amp;gt;, mentioned on the show &amp;lt;a href=&quot;https://pythonbytes.fm/episodes/show/82/lets-make-a-clear-python-3-statement&quot;&amp;gt;back in 2018&amp;lt;/a&amp;gt;
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;Especially, look at the &amp;lt;code&amp;gt;--py38-plus&amp;lt;/code&amp;gt; through &amp;lt;code&amp;gt;--py39-plus&amp;lt;/code&amp;gt; flags.&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;There are flags for 3.10 and 3.11, but limited testing for them.&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+
+&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;Joke:&amp;lt;/strong&amp;gt; &amp;lt;a href=&quot;https://www.snorgtees.com/t-shirts/geek-nerd&quot;&amp;gt;&amp;lt;strong&amp;gt;I need a new shirt&amp;lt;/strong&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;</description>
+	<pubDate>Thu, 13 Oct 2022 08:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Real Python: ChatterBot: Build a Chatbot With Python</title>
+	<guid>https://realpython.com/build-a-chatbot-python-chatterbot/</guid>
+	<link>https://realpython.com/build-a-chatbot-python-chatterbot/</link>
+	<description>&lt;div&gt;&lt;p&gt;Chatbots can provide real-time customer support and are therefore a valuable asset in many industries. When you understand the basics of the &lt;strong&gt;ChatterBot&lt;/strong&gt; library, you can &lt;strong&gt;build and train&lt;/strong&gt; a &lt;strong&gt;self-learning chatbot&lt;/strong&gt; with just a few lines of Python code.&lt;/p&gt;
+&lt;p&gt;You’ll get the basic chatbot up and running right away &lt;a href=&quot;https://realpython.com/atom.xml#step-1-create-a-chatbot-using-python-chatterbot&quot;&gt;in step one&lt;/a&gt;, but the most interesting part is the learning phase, when you get to train your chatbot. The quality and preparation of your training data will make a big difference in your chatbot’s performance.&lt;/p&gt;
+&lt;p&gt;To simulate a real-world process that you might go through to create an industry-relevant chatbot, you’ll learn how to customize the chatbot’s responses. You’ll do this by preparing &lt;strong&gt;WhatsApp chat data&lt;/strong&gt; to train the chatbot. You can apply a similar process to train your bot from different conversational data in any domain-specific topic.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;In this tutorial, you’ll learn how to:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Build a &lt;strong&gt;command-line chatbot&lt;/strong&gt; with ChatterBot&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Train&lt;/strong&gt; the chatbot to customize its responses&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Export&lt;/strong&gt; your WhatsApp chat history&lt;/li&gt;
+&lt;li&gt;Perform &lt;strong&gt;data cleaning&lt;/strong&gt; on the chat export using &lt;strong&gt;regular expressions&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Retrain&lt;/strong&gt; the chatbot with industry-specific data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You’ll also learn how ChatterBot stores your training data, and you’ll find suggestions and pointers for &lt;a href=&quot;https://realpython.com/atom.xml#next-steps&quot;&gt;next steps&lt;/a&gt;, so you can start collecting real user data and let the chatbot learn from it.&lt;/p&gt;
+&lt;p&gt;Overall, in this tutorial, you’ll quickly run through the basics of creating a chatbot with ChatterBot and learn how Python allows you to get fun and useful results without needing to write a lot of code.&lt;/p&gt;
+&lt;div class=&quot;alert alert-warning&quot;&gt;
+&lt;p&gt;&lt;strong&gt;Source Code:&lt;/strong&gt; &lt;a href=&quot;https://realpython.com/bonus/build-a-chatbot-python-chatterbot-code/&quot; class=&quot;alert-link&quot;&gt;Click here to download the free source code&lt;/a&gt; that you’ll use to build a chatbot.&lt;/p&gt;
+&lt;/div&gt;
+&lt;h2 id=&quot;demo&quot;&gt;Demo&lt;a class=&quot;headerlink&quot; href=&quot;https://realpython.com/atom.xml#demo&quot; title=&quot;Permanent link&quot;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;At the end of this tutorial, you’ll have a command-line chatbot that can respond to your inputs with semi-meaningful replies:&lt;/p&gt;
+
+  &lt;div class=&quot;embed-responsive embed-responsive-16by9 rounded mb-3 &quot;&gt;
+    
+  &lt;/div&gt;
+
+
+
+&lt;p&gt;You’ll achieve that by preparing WhatsApp chat data and using it to train the chatbot. Beyond learning from your automated training, the chatbot will improve over time as it gets more exposure to questions and replies from user interactions.&lt;/p&gt;
+&lt;h2 id=&quot;project-overview&quot;&gt;Project Overview&lt;a class=&quot;headerlink&quot; href=&quot;https://realpython.com/atom.xml#project-overview&quot; title=&quot;Permanent link&quot;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://chatterbot.readthedocs.io/en/stable/index.html&quot;&gt;The ChatterBot library&lt;/a&gt; combines language corpora, text processing, machine learning algorithms, and data storage and retrieval to allow you to build flexible chatbots.&lt;/p&gt;
+&lt;p&gt;You can build an industry-specific chatbot by training it with relevant data. Additionally, the chatbot will remember user responses and continue building its internal &lt;a href=&quot;https://en.wikipedia.org/wiki/Graph_(abstract_data_type)&quot;&gt;graph structure&lt;/a&gt; to improve the responses that it can give.&lt;/p&gt;
+&lt;div class=&quot;alert alert-primary&quot;&gt;
+&lt;p&gt;&lt;strong&gt;Attention:&lt;/strong&gt; While ChatterBot is still a popular open source solution for building a chatbot in Python, it hasn’t been actively maintained for a while and has therefore accumulated a significant number of &lt;a href=&quot;https://github.com/gunthercox/ChatterBot/issues/&quot;&gt;issues&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;There are multiple forks of the project that implement fixes and updates to the existing codebase, but you’ll have to personally pick the fork that implements the solution you’re looking for and then &lt;a href=&quot;https://realpython.com/what-is-pip/#installing-packages-from-your-github-repositories&quot;&gt;install it directly from GitHub&lt;/a&gt;. A fork might also come with &lt;a href=&quot;https://github.com/feignbird/ChatterBot-spacy_fixed#installation&quot;&gt;additional installation instructions&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To get started, however, you won’t use a fork. Instead, you’ll use a specific pinned version of the library, as &lt;a href=&quot;https://pypi.org/project/ChatterBot/&quot;&gt;distributed on PyPI&lt;/a&gt;. You’ll find more information about installing ChatterBot in &lt;a href=&quot;https://realpython.com/atom.xml#step-1-create-a-chatbot-using-python-chatterbot&quot;&gt;step one&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;In this tutorial, you’ll start with an untrained chatbot that’ll showcase how quickly you can create an interactive chatbot using Python’s ChatterBot. You’ll also notice how small the vocabulary of an untrained chatbot is.&lt;/p&gt;
+&lt;p&gt;Next, you’ll learn how you can train such a chatbot and check on the slightly improved results. The more plentiful and high-quality your training data is, the better your chatbot’s responses will be.&lt;/p&gt;
+&lt;p&gt;Therefore, you’ll either fetch the conversation history of one of your WhatsApp chats or use the provided &lt;code&gt;chat.txt&lt;/code&gt; file that you can download here:&lt;/p&gt;
+&lt;div class=&quot;alert alert-warning&quot;&gt;
+&lt;p&gt;&lt;strong&gt;Source Code:&lt;/strong&gt; &lt;a href=&quot;https://realpython.com/bonus/build-a-chatbot-python-chatterbot-code/&quot; class=&quot;alert-link&quot;&gt;Click here to download the free source code&lt;/a&gt; that you’ll use to build a chatbot.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;It’s rare that input data comes exactly in the form that you need it, so you’ll clean the chat export data to get it into a useful input format. This process will show you some tools you can use for data cleaning, which may help you prepare other input data to feed to your chatbot.&lt;/p&gt;
+&lt;p&gt;After data cleaning, you’ll retrain your chatbot and give it another spin to experience the improved performance.&lt;/p&gt;
+&lt;p&gt;When you work through this process from start to finish, you’ll get a good idea of how you can build and train a Python chatbot with the ChatterBot library so that it can provide an interactive experience with relevant replies.&lt;/p&gt;
+&lt;h2 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;a class=&quot;headerlink&quot; href=&quot;https://realpython.com/atom.xml#prerequisites&quot; title=&quot;Permanent link&quot;&gt;&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Before you get started, make sure that you have a Python version available that works for this ChatterBot project. What version of Python you need depends on your operating system:&lt;/p&gt;
+&lt;/div&gt;&lt;h2&gt;&lt;a href=&quot;https://realpython.com/build-a-chatbot-python-chatterbot/?utm_source=realpython&amp;utm_medium=rss&quot;&gt;Read the full article at https://realpython.com/build-a-chatbot-python-chatterbot/ »&lt;/a&gt;&lt;/h2&gt;
+        &lt;hr /&gt;
+        &lt;p&gt;&lt;em&gt;[ Improve Your Python With 🐍 Python Tricks 💌 – Get a short &amp;amp; sweet Python Trick delivered to your inbox every couple of days. &lt;a href=&quot;https://realpython.com/python-tricks/?utm_source=realpython&amp;utm_medium=rss&amp;utm_campaign=footer&quot;&gt;&amp;gt;&amp;gt; Click here to learn more and see examples&lt;/a&gt; ]&lt;/em&gt;&lt;/p&gt;</description>
+	<pubDate>Wed, 12 Oct 2022 14:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>Python for Beginners: Merge DataFrames in Python</title>
+	<guid>https://www.pythonforbeginners.com/basics/merge-dataframes-in-python</guid>
+	<link>https://www.pythonforbeginners.com/basics/merge-dataframes-in-python</link>
+	<description>&lt;p&gt;Python provides us with the&lt;a href=&quot;https://www.pythonforbeginners.com/basics/create-pandas-dataframe-in-python&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt; pandas dataframes&lt;/a&gt; to handle tabular data. In this article, we will discuss how we can merge two dataframes in python.&lt;/p&gt;
+
+
+
+&lt;h2&gt;How to Merge Two DataFrames in Python?&lt;/h2&gt;
+
+
+
+&lt;p&gt;Suppose that we have a dataframe that contains the names of some students, their roll number, and the class they have opted to study as shown below.&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;wp-block-code language-python&quot;&gt;&lt;code&gt;     Class  Roll      Name
+0       1    11    Aditya
+1       1    12     Chris
+2       1    13       Sam
+3       1    14      Joel
+4       1    15       Tom
+5       1    16  Samantha
+6       1    17     Pablo
+7       1    20      Tina
+8       1    24       Amy
+9       1    30    Justin
+10      1    31      Karl&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;Also, we have a dataframe that contains the roll number of the students and the marks obtained by them as shown below.&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;wp-block-code language-python&quot;&gt;&lt;code&gt;    Roll  Marks Grade
+0    11     85     A
+1    12     95     A
+2    13     75     B
+3    14     75     B
+4    16     78     B
+5    15     55     C
+6    19     75     B
+7    20     72     B
+8    24     92     A
+9    25     95     A&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;Now, we have to merge the given dataframes such that the resultant dataframe contains the name, roll number, grade, class, and the corresponding marks for each student as shown below.&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;wp-block-code language-python&quot;&gt;&lt;code&gt;    Roll  Marks Grade  Class      Name
+0    11     85     A      1    Aditya
+1    12     95     A      1     Chris
+2    13     75     B      1       Sam
+3    14     75     B      1      Joel
+4    16     78     B      1  Samantha
+5    15     55     C      1       Tom
+6    20     72     B      1      Tina
+7    24     92     A      1       Amy&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;To obtain the output, we will use the &lt;code&gt;merge()&lt;/code&gt; method defined in the pandas module. The syntax of the &lt;code&gt;merge()&lt;/code&gt; method is as follows.&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;wp-block-code language-python&quot;&gt;&lt;code&gt;pd.merge(df1,df2, on) &lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;Here,&amp;nbsp;&lt;/p&gt;
+
+
+
+&lt;ul&gt;&lt;li&gt;&lt;code&gt;df1&lt;/code&gt;  denotes the first dataframe.&lt;/li&gt;&lt;li&gt;The parameter &lt;code&gt;df2&lt;/code&gt; denotes the second dataframe that is to be merged.&lt;/li&gt;&lt;li&gt;The parameter &lt;code&gt;‘on’&lt;/code&gt; is the column name of the dataframes that is used to compare the columns of the given dataframes. Rows from two dataframes are merged together if they have the same value in the column corresponding to the ‘on’ parameter.&lt;/li&gt;&lt;/ul&gt;
+
+
+
+&lt;p&gt;The &lt;code&gt;merge()&lt;/code&gt; method also takes several other parameters. You can have a look at them in this &lt;a href=&quot;https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.merge.html&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;
+
+
+
+&lt;p&gt;To merge the given dataframes, we will invoke the &lt;code&gt;merge()&lt;/code&gt; method first dataframe as the first input argument. Subsequently, we will pass the dataframe containing the marks as the second input argument to the &lt;code&gt;merge()&lt;/code&gt; method. To the&lt;code&gt; ‘on’&lt;/code&gt; parameter, we will pass the &lt;code&gt;‘Roll’&lt;/code&gt; column name. In this way, the rows corresponding to the same roll numbers from the given dataframes will be merged and the resultant dataframe will be produced as shown below.&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;wp-block-code language-python&quot;&gt;&lt;code&gt;import numpy as np
+import pandas as pd
+df1=pd.read_csv(&quot;grade_with_roll1.csv&quot;)
+print(&quot;First dataframe is:&quot;)
+print(df1)
+df2=pd.read_csv(&quot;name_data1.csv&quot;)
+print(&quot;second dataframe is:&quot;)
+print(df2)
+df3=pd.merge(df1,df2,left_on=&quot;Roll&quot;, right_on=&quot;Roll&quot;)
+print(&quot;Merged dataframe is:&quot;)
+print(df3)&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;wp-block-code language-python&quot;&gt;&lt;code&gt;First dataframe is:
+   Roll  Marks Grade
+0    11     85     A
+1    12     95     A
+2    13     75     B
+3    14     75     B
+4    16     78     B
+5    15     55     C
+6    19     75     B
+7    20     72     B
+8    24     92     A
+9    25     95     A
+second dataframe is:
+    Class  Roll      Name
+0       1    11    Aditya
+1       1    12     Chris
+2       1    13       Sam
+3       1    14      Joel
+4       1    15       Tom
+5       1    16  Samantha
+6       1    17     Pablo
+7       1    20      Tina
+8       1    24       Amy
+9       1    30    Justin
+10      1    31      Karl
+Merged dataframe is:
+   Roll  Marks Grade  Class      Name
+0    11     85     A      1    Aditya
+1    12     95     A      1     Chris
+2    13     75     B      1       Sam
+3    14     75     B      1      Joel
+4    16     78     B      1  Samantha
+5    15     55     C      1       Tom
+6    20     72     B      1      Tina
+7    24     92     A      1       Amy&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;If the second dataframe has rows that do not correspond to any row in the first dataframe, those rows are omitted from the result. Similarly, if the first dataframe has rows that don’t correspond to the second dataframe, those rows will be omitted from the result. You can observe this in the above example.&lt;/p&gt;
+
+
+
+&lt;h2&gt;Merge DataFrames Using Outer Join in Python&lt;/h2&gt;
+
+
+
+&lt;p&gt;To include the omitted rows, we can use the parameter &lt;code&gt;‘how’&lt;/code&gt; in the &lt;code&gt;merge()&lt;/code&gt; method. The &lt;code&gt;‘how’&lt;/code&gt; parameter has the default value &lt;code&gt;‘inner’&lt;/code&gt;. Due to this, only those rows are included in the resultant dataframe that are present in both the input dataframes. To included the omitted dataframes, you can pass the value &lt;code&gt;‘outer’&lt;/code&gt; to the &lt;code&gt;‘how’&lt;/code&gt; parameter as shown below.&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;wp-block-code language-python&quot;&gt;&lt;code&gt;import numpy as np
+import pandas as pd
+df1=pd.read_csv(&quot;grade_with_roll1.csv&quot;)
+print(&quot;First dataframe is:&quot;)
+print(df1)
+df2=pd.read_csv(&quot;name_data1.csv&quot;)
+print(&quot;second dataframe is:&quot;)
+print(df2)
+df3=pd.merge(df1,df2,how=&quot;outer&quot;,left_on=&quot;Roll&quot;, right_on=&quot;Roll&quot;,suffixes=(&quot;_left&quot;,&quot;_right&quot;))
+print(&quot;Merged dataframe is:&quot;)
+print(df3)&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;wp-block-code language-python&quot;&gt;&lt;code&gt;First dataframe is:
+   Roll  Marks Grade
+0    11     85     A
+1    12     95     A
+2    13     75     B
+3    14     75     B
+4    16     78     B
+5    15     55     C
+6    19     75     B
+7    20     72     B
+8    24     92     A
+9    25     95     A
+second dataframe is:
+    Class  Roll      Name
+0       1    11    Aditya
+1       1    12     Chris
+2       1    13       Sam
+3       1    14      Joel
+4       1    15       Tom
+5       1    16  Samantha
+6       1    17     Pablo
+7       1    20      Tina
+8       1    24       Amy
+9       1    30    Justin
+10      1    31      Karl
+Merged dataframe is:
+    Roll  Marks Grade  Class      Name
+0     11   85.0     A    1.0    Aditya
+1     12   95.0     A    1.0     Chris
+2     13   75.0     B    1.0       Sam
+3     14   75.0     B    1.0      Joel
+4     16   78.0     B    1.0  Samantha
+5     15   55.0     C    1.0       Tom
+6     19   75.0     B    NaN       NaN
+7     20   72.0     B    1.0      Tina
+8     24   92.0     A    1.0       Amy
+9     25   95.0     A    NaN       NaN
+10    17    NaN   NaN    1.0     Pablo
+11    30    NaN   NaN    1.0    Justin
+12    31    NaN   NaN    1.0      Karl&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;Suggested Reading: If you are into machine learning, you can read this article on &lt;a href=&quot;https://codinginfinite.com/regression-in-machine-learning-with-examples/&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;regression in machine learning&lt;/a&gt;. You might also like this article on &lt;a href=&quot;https://codinginfinite.com/k-means-clustering-using-sklearn-in-python/&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;k-means clustering with numerical example&lt;/a&gt;.&lt;/p&gt;
+
+
+
+&lt;h2&gt;Merge DataFrames Using Left and Right Join in Python&lt;/h2&gt;
+
+
+
+&lt;p&gt;If you want to include omitted rows only from the first dataframe, you can pass the value &lt;code&gt;‘left’&lt;/code&gt; to the parameter &lt;code&gt;‘how’&lt;/code&gt;.&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;wp-block-code language-python&quot;&gt;&lt;code&gt;import numpy as np
+import pandas as pd
+df1=pd.read_csv(&quot;grade_with_roll1.csv&quot;)
+print(&quot;First dataframe is:&quot;)
+print(df1)
+df2=pd.read_csv(&quot;name_data1.csv&quot;)
+print(&quot;second dataframe is:&quot;)
+print(df2)
+df3=pd.merge(df1,df2,how=&quot;left&quot;,left_on=&quot;Roll&quot;, right_on=&quot;Roll&quot;,suffixes=(&quot;_left&quot;,&quot;_right&quot;))
+print(&quot;Merged dataframe is:&quot;)
+print(df3)&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;wp-block-code language-python&quot;&gt;&lt;code&gt;First dataframe is:
+   Roll  Marks Grade
+0    11     85     A
+1    12     95     A
+2    13     75     B
+3    14     75     B
+4    16     78     B
+5    15     55     C
+6    19     75     B
+7    20     72     B
+8    24     92     A
+9    25     95     A
+second dataframe is:
+    Class  Roll      Name
+0       1    11    Aditya
+1       1    12     Chris
+2       1    13       Sam
+3       1    14      Joel
+4       1    15       Tom
+5       1    16  Samantha
+6       1    17     Pablo
+7       1    20      Tina
+8       1    24       Amy
+9       1    30    Justin
+10      1    31      Karl
+Merged dataframe is:
+   Roll  Marks Grade  Class      Name
+0    11     85     A    1.0    Aditya
+1    12     95     A    1.0     Chris
+2    13     75     B    1.0       Sam
+3    14     75     B    1.0      Joel
+4    16     78     B    1.0  Samantha
+5    15     55     C    1.0       Tom
+6    19     75     B    NaN       NaN
+7    20     72     B    1.0      Tina
+8    24     92     A    1.0       Amy
+9    25     95     A    NaN       NaN&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;Similarly, if you want to include omitted rows only from the second dataframe, you can pass the value &lt;code&gt;‘right’&lt;/code&gt; to the &lt;code&gt;‘how’&lt;/code&gt; parameter as shown below.&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;wp-block-code language-python&quot;&gt;&lt;code&gt;import numpy as np
+import pandas as pd
+df1=pd.read_csv(&quot;grade_with_roll1.csv&quot;)
+print(&quot;First dataframe is:&quot;)
+print(df1)
+df2=pd.read_csv(&quot;name_data1.csv&quot;)
+print(&quot;second dataframe is:&quot;)
+print(df2)
+df3=pd.merge(df1,df2,how=&quot;right&quot;,left_on=&quot;Roll&quot;, right_on=&quot;Roll&quot;,suffixes=(&quot;_left&quot;,&quot;_right&quot;))
+print(&quot;Merged dataframe is:&quot;)
+print(df3)&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;Output:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;wp-block-code language-python&quot;&gt;&lt;code&gt;First dataframe is:
+   Roll  Marks Grade
+0    11     85     A
+1    12     95     A
+2    13     75     B
+3    14     75     B
+4    16     78     B
+5    15     55     C
+6    19     75     B
+7    20     72     B
+8    24     92     A
+9    25     95     A
+second dataframe is:
+    Class  Roll      Name
+0       1    11    Aditya
+1       1    12     Chris
+2       1    13       Sam
+3       1    14      Joel
+4       1    15       Tom
+5       1    16  Samantha
+6       1    17     Pablo
+7       1    20      Tina
+8       1    24       Amy
+9       1    30    Justin
+10      1    31      Karl
+Merged dataframe is:
+    Roll  Marks Grade  Class      Name
+0     11   85.0     A      1    Aditya
+1     12   95.0     A      1     Chris
+2     13   75.0     B      1       Sam
+3     14   75.0     B      1      Joel
+4     15   55.0     C      1       Tom
+5     16   78.0     B      1  Samantha
+6     17    NaN   NaN      1     Pablo
+7     20   72.0     B      1      Tina
+8     24   92.0     A      1       Amy
+9     30    NaN   NaN      1    Justin
+10    31    NaN   NaN      1      Karl&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+
+
+&lt;p&gt;In this article, we have discussed how to merge two dataframes in python using the &lt;code&gt;merge() &lt;/code&gt;method. To learn more about python programming, you can read this article on &lt;a href=&quot;https://www.pythonforbeginners.com/dictionary/dictionary-comprehension-in-python&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;dictionary comprehension&lt;/a&gt; in python. You might also like this article on &lt;a href=&quot;https://www.pythonforbeginners.com/basics/list-comprehensions-in-python&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot;&gt;list comprehension&lt;/a&gt; in python.&lt;/p&gt;
+&lt;p&gt;The post &lt;a rel=&quot;nofollow&quot; href=&quot;https://www.pythonforbeginners.com/basics/merge-dataframes-in-python&quot;&gt;Merge DataFrames in Python&lt;/a&gt; appeared first on &lt;a rel=&quot;nofollow&quot; href=&quot;https://www.pythonforbeginners.com&quot;&gt;PythonForBeginners.com&lt;/a&gt;.&lt;/p&gt;</description>
+	<pubDate>Wed, 12 Oct 2022 13:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>EuroPython Society: EuroPython Society General Assembly 2022</title>
+	<guid>https://www.europython-society.org/europython-society-general-assembly-2022/</guid>
+	<link>https://www.europython-society.org/europython-society-general-assembly-2022/</link>
+	<description>&lt;p&gt;It feels like yesterday that many of us were together in Dublin or online for EuroPython 2022. Each year, the current board of the EuroPython Society (EPS) holds a General Assembly (GA). It is a precious opportunity for all our members to get together annually, and reflect on the learnings of the past and direction for the future the Society holds.&lt;/p&gt;&lt;img src=&quot;https://www.europython-society.org/content/images/2022/10/image.png&quot; class=&quot;kg-image&quot; alt=&quot;alt&quot; width=&quot;2000&quot; height=&quot;500&quot; /&gt;&lt;p&gt;All members of the EPS are invited to the 2022 GA at &lt;strong&gt;17:00 - 19:00 CEST on Saturday 29 October 2022&lt;/strong&gt;. &amp;#xA0;This year&amp;#x2019;s GA will be held online again to allow as many members as possible to engage with us.&lt;/p&gt;&lt;p&gt;As an EPS member, you are welcome to join us to discuss Society matters and vote at the meeting. While we cannot allow non-EPS members to join the online meeting, a recording of the meeting will be made public on YouTube.&lt;/p&gt;&lt;p&gt;For your convenience, a separate calendar invite with the Zoom link will be sent via email to all EPS members subscribed to the members mailing list. If you are an EPS member and have not received an email, please email us at &lt;a href=&quot;mailto:board@europython.eu&quot;&gt;board@europython.eu&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;Your support of EPS is greatly appreciated and we hope to see many of you!&lt;/p&gt;&lt;div class=&quot;kg-card kg-button-card kg-align-center&quot;&gt;&lt;a href=&quot;https://www.europython-society.org/application/&quot; class=&quot;kg-btn kg-btn-accent&quot;&gt;Find out how to become an EPS member here!&lt;/a&gt;&lt;/div&gt;&lt;h2 id=&quot;board-nominations&quot;&gt;Board Nominations&lt;/h2&gt;&lt;p&gt;Every year at the GA, we will vote in a new EPS Board of Directors. EPS members who wish to stand for election to the board of directors or nominate others must send in your nomination notice, along with a biography of yours.&lt;/p&gt;&lt;p&gt;Though the formal deadline for sending in your nomination is at the time of the GA, we would appreciate it if you could return it to us by emailing &lt;a href=&quot;mailto:board@europython.eu&quot;&gt;board@europython.eu&lt;/a&gt; by &lt;strong&gt;Saturday 22 October 2022&lt;/strong&gt;. We will publish all the candidates and their nomination statements on a separate blog post for our members to read in advance.&lt;/p&gt;&lt;p&gt;The EPS board is made up of up to 9 directors (including 1 chair and 1 vice chair). The duties and responsibilities of the board are substantial: the board runs the day-to-day business of the EuroPython Society, including significant workload in running the EuroPython conference series, and supports the community through various initiatives such as our grants programme. The board collectively takes up the fiscal and legal responsibility of the Society.&lt;/p&gt;&lt;h2 id=&quot;general-assembly-agenda&quot;&gt;General Assembly Agenda&lt;/h2&gt;&lt;p&gt;The agenda will go through all the items business set out in &lt;a href=&quot;https://www.europython-society.org/bylaws&quot;&gt;Section 8 of the EPS bylaws&lt;/a&gt;. We will send out - via our members mailing list - the agenda, and all motions put forward by the board and members by &lt;strong&gt;Saturday 22 October 2022&lt;/strong&gt;. This will give our members time to go through the information in advance, hopefully leaving more space for questions.&lt;/p&gt;&lt;p&gt;All reports for the GA will also be published in advance, to give the members enough time to read and prepare questions to raise at the GA.&lt;/p&gt;&lt;h2 id=&quot;propositions-from-the-board&quot;&gt;Propositions from the board&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;None at the moment.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Should there be any propositions from the board, they will be announced and made available to all our members at least 5 days before the GA, as per &lt;a href=&quot;https://www.europython-society.org/bylaws/&quot;&gt;Section 10 of our bylaws&lt;/a&gt;.&lt;/p&gt;&lt;h2 id=&quot;motions-from-the-members&quot;&gt;Motions from the members&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;None at the moment.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;All EPS members have the right to propose motions to be voted on at the GA.&lt;/p&gt;&lt;p&gt;If you want to raise a motion, please send it to &lt;a href=&quot;mailto:board@europython.eu&quot;&gt;board@europython.eu&lt;/a&gt; &lt;strong&gt;no later than Friday, 21 October 2022&lt;/strong&gt;, so that we can add them to the agenda. The &lt;a href=&quot;https://www.europython-society.org/bylaws&quot;&gt;bylaws&lt;/a&gt; require that members&amp;#x2019; motions be announced at least 5 days before the GA and we will need time to clarify details and make the agenda available to our members accordingly.&lt;/p&gt;&lt;p&gt;Hope to see many of you at the EPS 2022 GA! &amp;#x2764;&amp;#xFE0F;&amp;#x1F40D; &lt;br /&gt;&lt;/p&gt;&lt;p&gt;Raquel&lt;br /&gt;EuroPython Society Chair&lt;br /&gt;on behalf of the EPS Board&lt;/p&gt;</description>
+	<pubDate>Wed, 12 Oct 2022 10:22:20 +0000</pubDate>
+</item>
+<item>
+	<title>IslandT: Python Example — Write a Python program to find the permutation of an event</title>
+	<guid>https://islandtropicaman.com/wp/2022/10/12/python-example-write-a-python-program-to-find-the-permutation-of-an-event/</guid>
+	<link>https://islandtropicaman.com/wp/2022/10/12/python-example-write-a-python-program-to-find-the-permutation-of-an-event/</link>
+	<description>&lt;p&gt;In this example let us create a Python program that will find the permutation of an event. A permutation event is very confusing to me and I am still learning it thus this article is not about explaining what is actually permutation but instead demonstrating to you all how to create the Python program which calculates the permutation event.&lt;/p&gt;
+&lt;p&gt;According to the rule of permutation if you want to know how many distinct orders you can arrange a group of n elements from a set of N distinctly different elements you will apply this formula:&lt;/p&gt;
+&lt;p&gt;N!/(N-n)!&lt;/p&gt;
+&lt;p&gt;For example, if you want to find out how many distinct orders can you arrange 20 different job seekers for three job positions, A, B, and C then you can apply the permutation formula as follows:&lt;/p&gt;
+&lt;p&gt;N = 20&lt;br /&gt;
+n = 3&lt;/p&gt;
+&lt;p&gt;thus 20!/(20-3)! = 20 * 19 * 18 = 6840.&lt;/p&gt;
+&lt;p&gt;The Python program below will call its own function to calculate the factorial part as well as call the factorial function within the main function.&lt;/p&gt;
+&lt;pre class=&quot;brush: php; title: ; notranslate&quot;&gt;
+def factorial(n):
+
+    if n &amp;gt; 1:
+        return n * factorial(n-1)
+    else:
+        return 1
+
+def arrange(N, n):
+
+    top = factorial(N)
+    bottom = factorial(N-n)
+    return int(top/bottom) # eliminated the decimal places
+
+print(arrange(20, 3)) # 6840
+&lt;/pre&gt;
+&lt;p&gt;Another example: How many distinct orders can you arrange 5 chairs from a set of 5? &lt;/p&gt;
+&lt;p&gt;In this example, n equals N thus (N-n)! = 0! and you will get 5!/0! which is equal to 5 * 4 * 3 * 2 * 1 / 1 = 120. Let see whether the answer is tally with the permutation program :&lt;/p&gt;
+&lt;pre class=&quot;brush: php; title: ; notranslate&quot;&gt;
+print(arrange(5, 5)) # 120
+&lt;/pre&gt;
+&lt;p&gt;The outcome of the permutation program has matched the result that I calculated previously!&lt;/p&gt;</description>
+	<pubDate>Wed, 12 Oct 2022 01:40:06 +0000</pubDate>
+</item>
+<item>
+	<title>Read the Docs: Read the Docs newsletter - October 2022</title>
+	<guid>https://blog.readthedocs.com/newsletter-october-2022/</guid>
+	<link>https://blog.readthedocs.com/newsletter-october-2022/</link>
+	<description>&lt;div class=&quot;section&quot; id=&quot;read-the-docs-newsletter-october-2022&quot;&gt;
+
+&lt;p&gt;September was exciting because a few members of our team finally got to gather in person.
+Manuel, Benjamin, and Eric all attended Djangocon Europe in September,
+and had lots of great discussions around documentation.&lt;/p&gt;
+&lt;p&gt;Also, as we mentioned, in Q4 we’re going to be focusing on our core platform features.
+This means we’ll have fewer new features to talk about,
+but lots of smaller improvements to the overall experience of using Read the Docs.&lt;/p&gt;
+&lt;div class=&quot;section&quot; id=&quot;new-features&quot;&gt;
+&lt;h2&gt;New features&lt;/h2&gt;
+&lt;p&gt;The latest updates from our team:&lt;/p&gt;
+&lt;ul class=&quot;simple&quot;&gt;
+&lt;li&gt;We fully rolled out support for auto-cancelling running builds when a user does multiple pushes to a branch in a small window of time. We wrote up a &lt;a class=&quot;reference external&quot; href=&quot;https://blog.readthedocs.com/cancel-old-builds/&quot;&gt;full post&lt;/a&gt; on the blog about it, where you can read more.&lt;/li&gt;
+&lt;li&gt;Redirects can now be edited directly in our dashboard. This was an oversight that we are glad to have finally fixed the UX around.&lt;/li&gt;
+&lt;li&gt;We fixed the bug we had previously mentioned around Gitlab tokens expiring. This caused PR builds for these users to stop properly reporting status. If you login with Gitlab again on our service, they will continue working indefinitely now.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can always see the latest changes to our platforms in our &lt;a class=&quot;reference external&quot; href=&quot;https://docs.readthedocs.io/en/stable/changelog.html&quot; title=&quot;(in Read the Docs user documentation v8.7.0)&quot;&gt;&lt;span class=&quot;xref std std-doc&quot;&gt;Read the Docs Changelog&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;section&quot; id=&quot;upcoming-features&quot;&gt;
+&lt;h2&gt;Upcoming features&lt;/h2&gt;
+&lt;p&gt;Our roadmap hasn’t progressed too much from last month,
+and we continue to focus on these core platform upgrades:&lt;/p&gt;
+&lt;ul class=&quot;simple&quot;&gt;
+&lt;li&gt;We’re working on improving our integration with Material for MkDocs, which is a great theme for MkDocs documentation projects.&lt;/li&gt;
+&lt;li&gt;Many improvements to our URL handling code, which will allow us to support more flexible URL configurations for projects.&lt;/li&gt;
+&lt;li&gt;A search redesign to make it nicer across our dashboard and in-doc search experiences.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&quot;section&quot; id=&quot;possible-issues&quot;&gt;
+&lt;h2&gt;Possible issues&lt;/h2&gt;
+&lt;p&gt;We continue planning to be more active in deprecating old and outdated approaches to using our platform in Q4.
+We don’t have anything firm to announce here yet,
+but we do plan to be more active in removing these features in the coming months.&lt;/p&gt;
+&lt;p&gt;We continue to actively deprecate jQuery from our code, as well as &lt;a class=&quot;reference external&quot; href=&quot;https://github.com/sphinx-doc/sphinx/issues/10608&quot;&gt;guide the Sphinx ecosystem&lt;/a&gt; through the transition.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&quot;section&quot; id=&quot;tip-of-the-month&quot;&gt;
+&lt;h2&gt;Tip of the month&lt;/h2&gt;
+&lt;p&gt;This month’s tip comes from our Twitter account:&lt;/p&gt;
+&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;Are you in doubt about which Sphinx theme to use? 🎨&lt;br /&gt;&lt;br /&gt;Take a look at &lt;a href=&quot;https://t.co/9w3JvCmlJj&quot;&gt;https://t.co/9w3JvCmlJj&lt;/a&gt; -- it has awesome live demos that will help you decide which theme is the best fit for your project. &lt;a href=&quot;https://t.co/Hr1K2bbJhd&quot;&gt;pic.twitter.com/Hr1K2bbJhd&lt;/a&gt;&lt;/p&gt;&amp;mdash; Read the Docs (@readthedocs) &lt;a href=&quot;https://twitter.com/readthedocs/status/1570744372387540994?ref_src=twsrc%5Etfw&quot;&gt;September 16, 2022&lt;/a&gt;&lt;/blockquote&gt; &lt;hr class=&quot;docutils&quot; /&gt;
+&lt;p&gt;Considering using Read the Docs for your next documentation project?
+Check out &lt;a class=&quot;reference external&quot; href=&quot;https://docs.readthedocs.io/&quot;&gt;our documentation&lt;/a&gt; to get started!&lt;/p&gt;
+&lt;p&gt;Questions? Comments? Ideas for the next newsletter? &lt;a class=&quot;reference external&quot; href=&quot;mailto:hello%40readthedocs.org&quot;&gt;Contact us&lt;/a&gt;!&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+	<pubDate>Wed, 12 Oct 2022 00:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>The Python Coding Blog: Mini-Post: Exploring Python Functions Through Experimentation</title>
+	<guid>https://thepythoncodingbook.com/2022/10/11/exploring-python-functions-through-experimentation/</guid>
+	<link>https://thepythoncodingbook.com/2022/10/11/exploring-python-functions-through-experimentation/</link>
+	<description>&lt;p&gt;Read the docs. Look at the source code. Yes, these are great tips to figure out what&amp;#8217;s happening underneath the hood. But sometimes you want to do a bit of experimentation and exploration of your own first.&lt;/p&gt;
+
+
+
+&lt;p&gt;It&amp;#8217;s more fun this way. And sometimes more instructive, too.&lt;/p&gt;
+
+
+
+&lt;p&gt;Here&amp;#8217;s something I came across today which I decided to explore. I was using &lt;code&gt;random.choice()&lt;/code&gt; and dictionaries. At one point I wrote the following by mistake:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;EnlighterJSRAW&quot;&gt;import random
+
+points = {
+    &quot;Stephen&quot;: 19,
+    &quot;Mary&quot;: 24,
+    &quot;James&quot;: 44,
+}
+
+print(random.choice(points))&lt;/pre&gt;
+
+
+
+&lt;p&gt;You can&amp;#8217;t use &lt;a href=&quot;https://thepythoncodingbook.com/data-types-and-data-structures/&quot;&gt;dictionaries&lt;/a&gt; as arguments for &lt;code&gt;random.choice()&lt;/code&gt; since the function needs a sequence. How silly of me, I actually knew that already.&lt;/p&gt;
+
+
+
+&lt;p&gt;But, had I not made that mistake, I would have denied myself a fun and instructive half an hour of exploration and experimentation.&lt;/p&gt;
+
+
+
+&lt;p&gt;Here&amp;#8217;s the error when you run this code:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;EnlighterJSRAW&quot;&gt;Traceback (most recent call last):
+  ...
+KeyError: 0&lt;/pre&gt;
+
+
+
+&lt;p&gt;The &lt;code&gt;KeyError&lt;/code&gt; piqued my interest. You get that error when you try to access a key in a dictionary that doesn&amp;#8217;t exist. I ran the code again and I got the same error (of course I did) but with a different value. Here are &lt;code&gt;10&lt;/code&gt; errors I got from &lt;code&gt;10&lt;/code&gt; succesive runs of this script:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;EnlighterJSRAW&quot;&gt;KeyError: 0
+KeyError: 0
+KeyError: 2
+KeyError: 0
+KeyError: 1
+KeyError: 0
+KeyError: 0
+KeyError: 2
+KeyError: 1
+KeyError: 1&lt;/pre&gt;
+
+
+
+&lt;p&gt;Let&amp;#8217;s look at the clues. I know that &lt;code&gt;random.choice()&lt;/code&gt; should pick a random item from a sequence. Therefore, the random nature of the numbers I got didn&amp;#8217;t surprise me.&lt;/p&gt;
+
+
+
+&lt;p&gt;I also know I have three items in my dictionary, and all the &lt;code&gt;KeyError&lt;/code&gt; values are in the range from &lt;code&gt;0&lt;/code&gt; to &lt;code&gt;2&lt;/code&gt;.&lt;/p&gt;
+
+
+
+&lt;p&gt;This made me assume that &lt;code&gt;random.choice()&lt;/code&gt; is trying to access a value using an index chosen at random.&lt;/p&gt;
+
+
+
+&lt;p&gt;I could have gone straight to the source code to read what&amp;#8217;s inside &lt;code&gt;random.choice()&lt;/code&gt;. But instead, I decided to explore this Python function myself first. Experimentation is fun!&lt;/p&gt;
+
+
+
+&lt;h2&gt;Let&amp;#8217;s Create A Test Class To Experiment&lt;/h2&gt;
+
+
+
+&lt;p&gt;If &lt;code&gt;random.choice()&lt;/code&gt; is trying to access a value based on the position in the sequence, it&amp;#8217;s likely to be using indexing. This makes sense since if it&amp;#8217;s trying to index the dictionary using &lt;code&gt;points[1]&lt;/code&gt;, say, then this will raise a &lt;code&gt;KeyError&lt;/code&gt; since &lt;code&gt;1&lt;/code&gt; is not a key in the dictionary.&lt;/p&gt;
+
+
+
+&lt;p&gt;Let&amp;#8217;s test this with a &lt;code&gt;Test&lt;/code&gt; class:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;EnlighterJSRAW&quot;&gt;import random
+
+class Test:
+    def __getitem__(self, item):
+        print(&quot;This is the __getitem__() method&quot;)
+
+dummy_item = Test()
+print(dummy_item[0])&lt;/pre&gt;
+
+
+
+&lt;p&gt;The class &lt;code&gt;Test&lt;/code&gt; only has the &lt;a href=&quot;https://docs.python.org/3/reference/datamodel.html?highlight=getitem#object.__getitem__&quot;&gt;&lt;code&gt;__getitem__()&lt;/code&gt;&lt;/a&gt; method defined. This is the method that&amp;#8217;s called when you try to get an item using the square brackets. If the object is a sequence, then this refers to indexing. But the method is used for non-sequences too, such as dictionaries.&lt;/p&gt;
+
+
+
+&lt;p&gt;In the last two lines, you create an instance of &lt;code&gt;Test&lt;/code&gt; and you use square brackets to confirm that this calls &lt;code&gt;__getitem__()&lt;/code&gt;. Here&amp;#8217;s the output:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;EnlighterJSRAW&quot;&gt;This is the __getitem__() method
+None&lt;/pre&gt;
+
+
+
+&lt;p&gt;The line showing us that &lt;code&gt;__getitem__()&lt;/code&gt; was called is printed out. You also get &lt;code&gt;None&lt;/code&gt; printed out since there is no explicit &lt;code&gt;return&lt;/code&gt; statement in &lt;code&gt;__getitem__()&lt;/code&gt;, so it returns &lt;code&gt;None&lt;/code&gt;.&lt;/p&gt;
+
+
+
+&lt;p&gt;Let&amp;#8217;s try using this in &lt;code&gt;random.choice()&lt;/code&gt; now:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;EnlighterJSRAW&quot;&gt;import random
+
+class Test:
+    def __getitem__(self, item):
+        print(&quot;This is the __getitem__() method&quot;)
+
+dummy_item = Test()
+print(random.choice(dummy_item))&lt;/pre&gt;
+
+
+
+&lt;p&gt;We still get an error. Here it is:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;EnlighterJSRAW&quot;&gt;Traceback (most recent call last):
+  ...
+TypeError: object of type 'Test' has no len()&lt;/pre&gt;
+
+
+
+&lt;p&gt;This gives us another clue. The object used in &lt;code&gt;random.choice()&lt;/code&gt; must have a length defined by the &lt;code&gt;len()&lt;/code&gt; function.&lt;/p&gt;
+
+
+
+&lt;p&gt;Indeed, this is the &lt;a href=&quot;https://docs.python.org/3/glossary.html#term-sequence&quot;&gt;formal definition of a &lt;strong&gt;sequence&lt;/strong&gt;&lt;/a&gt;: it must have both &lt;code&gt;__getitem__()&lt;/code&gt; and &lt;code&gt;__len__()&lt;/code&gt; defined. &lt;code&gt;__getitem__()&lt;/code&gt; needs to support integer indices and &lt;code&gt;__len__()&lt;/code&gt; needs to return the length of the sequence.&lt;/p&gt;
+
+
+
+&lt;p&gt;So, let&amp;#8217;s add the &lt;code&gt;__len__()&lt;/code&gt; method, too:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;EnlighterJSRAW&quot;&gt;import random
+
+class Test:
+    def __getitem__(self, item):
+        print(&quot;This is the __getitem__() method&quot;)
+
+    def __len__(self):
+        print(&quot;This is the __len__() method&quot;)
+
+dummy_item = Test()
+print(random.choice(dummy_item))&lt;/pre&gt;
+
+
+
+&lt;p&gt;When you run this, you&amp;#8217;ll get two outputs. The first is the string showing you that the &lt;code&gt;__len__()&lt;/code&gt; method was called. The second &amp;#8216;output&amp;#8217; is another error:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;EnlighterJSRAW&quot;&gt;This is the __len__() method
+
+Traceback (most recent call last):
+  ...
+TypeError: 'NoneType' object cannot be interpreted as an integer&lt;/pre&gt;
+
+
+
+&lt;p&gt;Let&amp;#8217;s put our detective hat on again.&lt;/p&gt;
+
+
+
+&lt;p&gt;&lt;code&gt;random.choice()&lt;/code&gt; needs the &lt;code&gt;__len__()&lt;/code&gt; method to be defined. It makes sense since it needs to choose a random index and this depends on how many items there are in the sequence. But the &lt;code&gt;__len__()&lt;/code&gt; method you defined so far doesn&amp;#8217;t have an explicit &lt;code&gt;return&lt;/code&gt; statement. Therefore, it returns &lt;code&gt;None&lt;/code&gt;. And &lt;code&gt;None&lt;/code&gt; is not an integer.&lt;/p&gt;
+
+
+
+&lt;p&gt;&lt;code&gt;random.choice()&lt;/code&gt; is trying to interpret the value returned by &lt;code&gt;__len__()&lt;/code&gt; as an integer. Of course it is, a sequence should have a &lt;code&gt;__len__()&lt;/code&gt; method which returns an integer as stated in the definition of a sequence.&lt;/p&gt;
+
+
+
+&lt;p&gt;Let&amp;#8217;s fix this by returning an integer:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;EnlighterJSRAW&quot;&gt;import random
+
+class Test:
+    def __getitem__(self, item):
+        print(&quot;This is the __getitem__() method&quot;)
+
+    def __len__(self):
+        print(&quot;This is the __len__() method&quot;)
+        return 5
+
+dummy_item = Test()
+print(random.choice(dummy_item))&lt;/pre&gt;
+
+
+
+&lt;p&gt;&lt;code&gt;random.choice()&lt;/code&gt; no longer complains about not having an integer coming back from &lt;code&gt;__len__()&lt;/code&gt; and you get the following output:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;EnlighterJSRAW&quot;&gt;This is the __len__() method
+This is the __getitem__() method
+None&lt;/pre&gt;
+
+
+
+&lt;p&gt;Both &lt;code&gt;__getitem__()&lt;/code&gt; and &lt;code&gt;__len__()&lt;/code&gt; were called as you can see from the strings printed out. You also have a &lt;code&gt;None&lt;/code&gt; that&amp;#8217;s returned by &lt;code&gt;random.choice()&lt;/code&gt;. It&amp;#8217;s likely that &lt;code&gt;random.choice()&lt;/code&gt; is returning whatever &lt;code&gt;__getitem__()&lt;/code&gt; returns. And at the moment, &lt;code&gt;__getitem__()&lt;/code&gt; returns &lt;code&gt;None&lt;/code&gt;.&lt;/p&gt;
+
+
+
+&lt;p&gt;Let&amp;#8217;s test this:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;EnlighterJSRAW&quot;&gt;import random
+
+class Test:
+    def __getitem__(self, item):
+        print(&quot;This is the __getitem__() method&quot;)
+        return &quot;This is what's returned by __getitem__()&quot;
+
+    def __len__(self):
+        print(&quot;This is the __len__() method&quot;)
+        return 5
+
+dummy_item = Test()
+print(random.choice(dummy_item))&lt;/pre&gt;
+
+
+
+&lt;p&gt;And the output shows that our final hypothesis is correct:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;EnlighterJSRAW&quot;&gt;This is the __len__() method
+This is the __getitem__() method
+This is what's returned by __getitem__()&lt;/pre&gt;
+
+
+
+&lt;p&gt;It seems as though &lt;code&gt;random.choice()&lt;/code&gt; chooses a random index depending on the length of the sequence and then fetches that item using indexing.&lt;/p&gt;
+
+
+
+&lt;p&gt;Now, it&amp;#8217;s time to check this by looking at the &lt;a href=&quot;https://docs.python.org/3/library/random.html?highlight=random%20choice#random.choice&quot;&gt;docs for &lt;code&gt;random.choice()&lt;/code&gt;&lt;/a&gt; and its &lt;a href=&quot;https://github.com/python/cpython/blob/main/Lib/random.py&quot;&gt;source code&lt;/a&gt;.&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;EnlighterJSRAW&quot;&gt;# from https://github.com/python/cpython/blob/main/Lib/random.py
+
+def choice(self, seq):
+        &quot;&quot;&quot;Choose a random element from a non-empty sequence.&quot;&quot;&quot;
+        if not seq:
+            raise IndexError('Cannot choose from an empty sequence')
+        return seq[self._randbelow(len(seq))]&lt;/pre&gt;
+
+
+
+&lt;p&gt;You can see that the sequence &lt;code&gt;seq&lt;/code&gt; is being indexed using square brackets. This calls &lt;code&gt;__getitem__()&lt;/code&gt;. It uses another method which has &lt;code&gt;len(seq)&lt;/code&gt; as its argument.&lt;/p&gt;
+
+
+
+&lt;h2&gt;Final Words&lt;/h2&gt;
+
+
+
+&lt;p&gt;Doing some detective work to explore what&amp;#8217;s happening inside Python functions is both fun and instructive. It encourages you to experiment: making hypotheses and testing them. And as with all experimentation, the failures are just as useful, if not more, as the successes!&lt;/p&gt;
+
+
+
+&lt;div class=&quot;is-layout-flow wp-block-group&quot;&gt;&lt;div class=&quot;wp-block-group__inner-container&quot;&gt;
+&lt;div class=&quot;wp-block-spacer&quot;&gt;&lt;/div&gt;
+
+
+
+&lt;div class=&quot;is-layout-flow wp-block-group&quot;&gt;&lt;div class=&quot;wp-block-group__inner-container&quot;&gt;
+&lt;hr class=&quot;wp-block-separator has-css-opacity is-style-wide&quot; /&gt;
+
+
+
+&lt;div class=&quot;wp-block-jetpack-markdown&quot;&gt;&lt;h2&gt;Get the latest blog updates&lt;/h2&gt;
+&lt;p&gt;No spam promise. You&amp;#8217;ll get an email when a new blog post is published&lt;/p&gt;
+&lt;/div&gt;
+
+
+
+&lt;!--[if lte IE 8]&gt;
+&lt;script charset=&quot;utf-8&quot; type=&quot;text/javascript&quot; src=&quot;//js.hsforms.net/forms/v2-legacy.js&quot;&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+
+
+
+
+
+&lt;ul class=&quot;is-layout-flex wp-block-social-links is-style-default&quot;&gt;&lt;li class=&quot;wp-social-link wp-social-link-twitter wp-block-social-link&quot;&gt;&lt;a href=&quot;https://twitter.com/s_gruppetta_ct&quot; class=&quot;wp-block-social-link-anchor&quot;&gt;&lt;span class=&quot;wp-block-social-link-label screen-reader-text&quot;&gt;Twitter&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+
+&lt;li class=&quot;wp-social-link wp-social-link-linkedin wp-block-social-link&quot;&gt;&lt;a href=&quot;https://www.linkedin.com/in/stephengruppetta/&quot; class=&quot;wp-block-social-link-anchor&quot;&gt;&lt;span class=&quot;wp-block-social-link-label screen-reader-text&quot;&gt;LinkedIn&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+
+
+
+&lt;hr class=&quot;wp-block-separator has-css-opacity is-style-wide&quot; /&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;The post &lt;a rel=&quot;nofollow&quot; href=&quot;https://thepythoncodingbook.com/2022/10/11/exploring-python-functions-through-experimentation/&quot;&gt;Mini-Post: Exploring Python Functions Through Experimentation&lt;/a&gt; appeared first on &lt;a rel=&quot;nofollow&quot; href=&quot;https://thepythoncodingbook.com&quot;&gt;The Python Coding Book&lt;/a&gt;.&lt;/p&gt;</description>
+	<pubDate>Tue, 11 Oct 2022 21:01:53 +0000</pubDate>
+</item>
+<item>
+	<title>PyCoder’s Weekly: Issue #546 (Oct. 11, 2022)</title>
+	<guid>https://pycoders.com/issues/546</guid>
+	<link>https://pycoders.com/issues/546</link>
+	<description>&lt;p&gt; &lt;span&gt;#546 – OCTOBER 11, 2022&lt;/span&gt;&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/issues/546/feed&quot;&gt;View in Browser »&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://pycoders.com&quot;&gt;&lt;img alt=&quot;The PyCoder&amp;rsquo;s Weekly Logo&quot; src=&quot;https://cdn.pycoders.com/37bdf31dc645f968ffb90196e5d38ff5&quot; /&gt;&lt;/a&gt;&lt;/p&gt; &lt;hr /&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9660/feed&quot; target=&quot;_blank&quot;&gt;Using a Memory Profiler in Python &amp;amp; What It Can Teach You&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; Have you used a memory profiler to gauge the performance of your Python application? Maybe you&amp;rsquo;re using it to troubleshoot memory issues when loading a large data science project. What could running a profiler show you about a codebase you&amp;rsquo;re learning? This week on the show, Pablo Galindo Salgado returns to talk about Memray, a powerful tracing memory profiler.&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9660/feed&quot; target=&quot;_blank&quot;&gt;REAL PYTHON&lt;/a&gt;&lt;/span&gt; &lt;span&gt;podcast&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9670/feed&quot; target=&quot;_blank&quot;&gt;The Dangers of &lt;code&gt;assert&lt;/code&gt; in Python&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; Did you know Python&amp;rsquo;s assert statement can lead to runtime security vulnerabilities? While there are safe ways to use assert, there are lots of unsafe ways to use it that can lead to a variety of convoluted problems.&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9670/feed&quot; target=&quot;_blank&quot;&gt;DHRUV PATEL&lt;/a&gt; • Shared by &lt;a href=&quot;https://pycoders.com/link/9693/feed&quot; target=&quot;_blank&quot;&gt;Randall Degges&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9658/feed&quot; target=&quot;_blank&quot;&gt;Try atoti, a Free Collaborative Python BI Analytics Platform&lt;/a&gt;&lt;/h3&gt; &lt;a href=&quot;https://pycoders.com/link/9658/feed&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://cdn.pycoders.com/0f8de8a00b02fa6263809d9d85aebf69&quot; alt=&quot;alt&quot; /&gt;&lt;/a&gt; &lt;p&gt; atoti is a BI analytics platform combining a python library and a web application helping Quants, Data Analyst, Data Scientist and Business Users to collaborate, analyze and &lt;a href=&quot;https://pycoders.com/link/9658/feed&quot; target=&quot;_blank&quot;&gt;translate their data into business KPIs →&lt;/a&gt;&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9658/feed&quot; target=&quot;_blank&quot;&gt;ACTIVEVIAM&lt;/a&gt;&lt;/span&gt; &lt;span&gt;sponsor&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9680/feed&quot; target=&quot;_blank&quot;&gt;Reasoning About &lt;code&gt;asyncio.Semaphore&lt;/code&gt;&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; Guido walks you through a single-table restaurant analogy to explain the complexity of semaphores in &lt;code&gt;asyncio&lt;/code&gt;. Details include the &lt;code&gt;TaskGroup&lt;/code&gt; context manager added in Python 3.11.&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9680/feed&quot; target=&quot;_blank&quot;&gt;GUIDO VAN ROSSUM&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9675/feed&quot; target=&quot;_blank&quot;&gt;Django Security Releases Issued: 4.1.2, 4.0.8, and 3.2.16&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9675/feed&quot; target=&quot;_blank&quot;&gt;DJANGO SOFTWARE FOUNDATION&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;h2&gt;Python Jobs&lt;/h2&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9685/feed&quot; target=&quot;_blank&quot;&gt;Content Operations Manager (Anywhere)&lt;/a&gt;&lt;/h3&gt; &lt;p&gt;&lt;a href=&quot;https://pycoders.com/link/9685/feed&quot; target=&quot;_blank&quot;&gt;Real Python&lt;/a&gt;&lt;/p&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9690/feed&quot; target=&quot;_blank&quot;&gt;Senior Software Engineer Backend (USA)&lt;/a&gt;&lt;/h3&gt; &lt;p&gt;&lt;a href=&quot;https://pycoders.com/link/9690/feed&quot; target=&quot;_blank&quot;&gt;Muck Rack&lt;/a&gt;&lt;/p&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9683/feed&quot; target=&quot;_blank&quot;&gt;Senior Backend Engineer (Anywhere)&lt;/a&gt;&lt;/h3&gt; &lt;p&gt;&lt;a href=&quot;https://pycoders.com/link/9683/feed&quot; target=&quot;_blank&quot;&gt;Doist&lt;/a&gt;&lt;/p&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9661/feed&quot; target=&quot;_blank&quot;&gt;Senior Full Stack Engineer (Python) - Remote - Full Time (Dallas, TX, USA)&lt;/a&gt;&lt;/h3&gt; &lt;p&gt;&lt;a href=&quot;https://pycoders.com/link/9661/feed&quot; target=&quot;_blank&quot;&gt;Nisum&lt;/a&gt;&lt;/p&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9676/feed&quot; target=&quot;_blank&quot;&gt;Senior Pipeline TD (Python) - Remote or On Site (Redmond, WA, USA)&lt;/a&gt;&lt;/h3&gt; &lt;p&gt;&lt;a href=&quot;https://pycoders.com/link/9676/feed&quot; target=&quot;_blank&quot;&gt;Studio Wildcard&lt;/a&gt;&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://www.pythonjobshq.com?utm_source=newsletter&amp;utm_campaign=pycoders546&amp;utm_medium=feed&quot; target=&quot;_blank&quot;&gt;More Python Jobs &amp;gt;&amp;gt;&amp;gt;&lt;/a&gt;&lt;/p&gt; &lt;h2&gt;Articles &amp;amp; Tutorials&lt;/h2&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9692/feed&quot; target=&quot;_blank&quot;&gt;Minimax in Python: Learn How to Lose the Game of Nim&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; The minimax algorithm can be used to find optimal strategies in many different games. In this tutorial, you&amp;rsquo;ll learn how to implement minimax in Python while playing the game of Nim. You&amp;rsquo;ll also learn how you can make the algorithm more efficient with alpha-beta pruning.&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9692/feed&quot; target=&quot;_blank&quot;&gt;REAL PYTHON&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9671/feed&quot; target=&quot;_blank&quot;&gt;Build Enumerations of Constants With Python&amp;rsquo;s &lt;code&gt;Enum&lt;/code&gt;&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; In this tutorial, you&amp;rsquo;ll learn how to create and use enumerations of semantically related constants in Python. To do this, you&amp;rsquo;ll use the &lt;code&gt;Enum&lt;/code&gt; class and other related tools and types from the &lt;code&gt;enum&lt;/code&gt; module, which is available in the Python standard library.&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9671/feed&quot; target=&quot;_blank&quot;&gt;REAL PYTHON&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9659/feed&quot; target=&quot;_blank&quot;&gt;Scout APM: Built For Developers, By Developers&lt;/a&gt;&lt;/h3&gt; &lt;a href=&quot;https://pycoders.com/link/9659/feed&quot; target=&quot;_blank&quot;&gt;&lt;img src=&quot;https://cdn.pycoders.com/d8ad8eb665315aa512cb3f8b0e1977f3&quot; alt=&quot;alt&quot; /&gt;&lt;/a&gt; &lt;p&gt; Performance issues are a pain. But with Scout&amp;rsquo;s APM tool, you can pinpoint performance and stability issues in Python applications with ease. Scout&amp;rsquo;s tracing logic detects the exact line of code causing the performance abnormality—&lt;a href=&quot;https://pycoders.com/link/9659/feed&quot; target=&quot;_blank&quot;&gt;fixing the issue before customers ever notice →&lt;/a&gt;&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9659/feed&quot; target=&quot;_blank&quot;&gt;SCOUT APM&lt;/a&gt;&lt;/span&gt; &lt;span&gt;sponsor&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9678/feed&quot; target=&quot;_blank&quot;&gt;How to Safely Pass Data to JavaScript in a Django Template&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; You want to pass your data from your Django view to JavaScript in your template and you want to do it securely. This post shows several ways of doing it without the risk of allowing malicious code injection.&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9678/feed&quot; target=&quot;_blank&quot;&gt;ADAM JOHNSON&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9673/feed&quot; target=&quot;_blank&quot;&gt;Designing a Secure API&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; This article is an introduction to REST APIs. It describes five levels of implementation, versioning, query parameters, how your design effects the server side, and how to secure your end-points.&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9673/feed&quot; target=&quot;_blank&quot;&gt;PEDRO ARAVENA&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9677/feed&quot; target=&quot;_blank&quot;&gt;Building Scalable Data Streaming in Python&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; This step-by-step guide shows you the tools and tech you need to build a highly scalable data streaming pipeline in Python. It covers the use of Scrapy with Redis and a JSON based data flow.&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9677/feed&quot; target=&quot;_blank&quot;&gt;MUHAMMAD HASEEB&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9672/feed&quot; target=&quot;_blank&quot;&gt;Decision Trees in Python: Predicting Diabetes&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; This post shows you how to use the decision-trees algorithm with real-world data to predict cases of diabetes. Examples include the use of &lt;code&gt;numpy&lt;/code&gt;, &lt;code&gt;pandas&lt;/code&gt;, and &lt;code&gt;sklearn&lt;/code&gt;.&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9672/feed&quot; target=&quot;_blank&quot;&gt;JOLEEN BOTHMA&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9684/feed&quot; target=&quot;_blank&quot;&gt;12 Beginner Concepts About Type Hints&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; This article gives an overview of type hints: what they are and when you should use them. It starts with simple types and builds up to more complex definitions.&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9684/feed&quot; target=&quot;_blank&quot;&gt;AHMED BESBES&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9691/feed&quot; target=&quot;_blank&quot;&gt;Ways to Introspect Python Objects at Runtime&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; Tips and tricks for inspecting Python objects and getting information about your code at runtime. Learn about built-in object methods and the &lt;code&gt;inspect&lt;/code&gt; module.&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9691/feed&quot; target=&quot;_blank&quot;&gt;MARTIN HEINZ&lt;/a&gt; • Shared by &lt;a href=&quot;https://pycoders.com/link/9687/feed&quot; target=&quot;_blank&quot;&gt;Martin Heinz&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9657/feed&quot; target=&quot;_blank&quot;&gt;Time Series Forecasting Methods - Free Article by InfluxData&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; Read an overview of what is time series analysis, time series forecasting methods, types of time series used for forecasting, and how to validate models.&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9657/feed&quot; target=&quot;_blank&quot;&gt;INFLUXDATA&lt;/a&gt;&lt;/span&gt; &lt;span&gt;sponsor&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9663/feed&quot; target=&quot;_blank&quot;&gt;Carefully Exploring Rust as a Python Developer&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; Karim writes about trying Rust programming as a 10+ years Python developer. He describes how to do common programming tasks and what the tooling looks like.&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9663/feed&quot; target=&quot;_blank&quot;&gt;KARIM JEDDA&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9667/feed&quot; target=&quot;_blank&quot;&gt;Discover SQLAlchemy: A Beginner Tutorial With Examples&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; In this SQLAlchemy tutorial, you will learn to access and run SQL queries on all types of relational databases using Python objects.&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9667/feed&quot; target=&quot;_blank&quot;&gt;ABID ALI AWAN&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;h2&gt;Projects &amp;amp; Code&lt;/h2&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9668/feed&quot; target=&quot;_blank&quot;&gt;matrix-webcam: Video Conference From Within the Matrix&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9668/feed&quot; target=&quot;_blank&quot;&gt;GITHUB.COM/JOSCHUCK&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9679/feed&quot; target=&quot;_blank&quot;&gt;DocArray: Nested, Unstructured Data&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9679/feed&quot; target=&quot;_blank&quot;&gt;JINA.AI&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9665/feed&quot; target=&quot;_blank&quot;&gt;awesome-diagramming: List of Diagram Tools for Software&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9665/feed&quot; target=&quot;_blank&quot;&gt;GITHUB.COM/SHUBHAMGRG04&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9669/feed&quot; target=&quot;_blank&quot;&gt;semantic-python-overview: List of Semantic Technologies&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9669/feed&quot; target=&quot;_blank&quot;&gt;GITHUB.COM/PYSEMTEC&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9662/feed&quot; target=&quot;_blank&quot;&gt;Django Consistency Model&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9662/feed&quot; target=&quot;_blank&quot;&gt;GITHUB.COM/OCCIPITAL&lt;/a&gt; • Shared by &lt;a href=&quot;https://pycoders.com/link/9664/feed&quot; target=&quot;_blank&quot;&gt;Alex Liabakh&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;h2&gt;Events&lt;/h2&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9674/feed&quot; target=&quot;_blank&quot;&gt;Smart Iterator Challenge (Week 2)&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; October 8 to October 17, 2022&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9674/feed&quot; target=&quot;_blank&quot;&gt;MEETUP.COM&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9688/feed&quot; target=&quot;_blank&quot;&gt;PyCon MEA @ Global DevSlam 2022&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; October 10 to October 14, 2022&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9688/feed&quot; target=&quot;_blank&quot;&gt;GLOBALDEVSLAM.COM&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9681/feed&quot; target=&quot;_blank&quot;&gt;Weekly Real Python Office Hours Q&amp;amp;A (Virtual)&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; October 12, 2022&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9681/feed&quot; target=&quot;_blank&quot;&gt;REALPYTHON.COM&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9682/feed&quot; target=&quot;_blank&quot;&gt;PyCon Ghana 2022&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; October 13 to October 16, 2022&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9682/feed&quot; target=&quot;_blank&quot;&gt;PYCON.ORG&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9689/feed&quot; target=&quot;_blank&quot;&gt;PyCon ZA 2022&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; October 13 to October 15, 2022&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9689/feed&quot; target=&quot;_blank&quot;&gt;PYCON.ORG&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;div&gt; &lt;h3&gt;&lt;a href=&quot;https://pycoders.com/link/9686/feed&quot; target=&quot;_blank&quot;&gt;PyCon JP 2022&lt;/a&gt;&lt;/h3&gt; &lt;p&gt; October 14 to October 17, 2022&lt;br /&gt; &lt;span&gt;&lt;a href=&quot;https://pycoders.com/link/9686/feed&quot; target=&quot;_blank&quot;&gt;PYCON.JP&lt;/a&gt;&lt;/span&gt; &lt;/p&gt; &lt;/div&gt; &lt;hr /&gt; &lt;p&gt;Happy Pythoning!&lt;br /&gt;This was PyCoder&amp;rsquo;s Weekly Issue #546.&lt;br /&gt;&lt;a href=&quot;https://pycoders.com/issues/546/feed&quot;&gt;View in Browser »&lt;/a&gt;&lt;/p&gt; &lt;img src=&quot;https://pycoders.com/issues/546/open/feed&quot; width=&quot;1&quot; height=&quot;1&quot; alt=&quot;alt&quot; /&gt; 
+        &lt;hr /&gt;
+        &lt;p&gt;&lt;em&gt;[ Subscribe to 🐍 PyCoder&amp;rsquo;s Weekly 💌 – Get the best Python news, articles, and tutorials delivered to your inbox once a week &lt;a href=&quot;https://pycoders.com/?utm_source=pycoders&amp;utm_medium=feed&amp;utm_campaign=footer&quot;&gt;&amp;gt;&amp;gt; Click here to learn more&lt;/a&gt; ]&lt;/em&gt;&lt;/p&gt;</description>
+	<pubDate>Tue, 11 Oct 2022 19:30:00 +0000</pubDate>
+</item>
+<item>
+	<title>Brett Cannon: Unravelling `if` statements</title>
+	<guid>https://snarky.ca/unravelling-if-statements/</guid>
+	<link>https://snarky.ca/unravelling-if-statements/</link>
+	<description>&lt;p&gt;After the initial posting of my &lt;a href=&quot;https://snarky.ca/mvpy-minimum-viable-python/&quot;&gt;summary post&lt;/a&gt; about my &lt;a href=&quot;https://snarky.ca/tag/syntactic-sugar/&quot;&gt;syntactic sugar series&lt;/a&gt;, I received the following reply to one of my tweets:&lt;/p&gt;&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;&amp;#x1F914; wondering&amp;#x2026; &amp;#x2018;if/else&amp;#x2019; (14 on your list) can be implemented in terms of &amp;#x2018;while&amp;#x2019; (15 on your list)? something like this:&lt;br /&gt;&lt;br /&gt;run_else = True&lt;br /&gt;while condition:&lt;br /&gt;    run_else = False&lt;br /&gt;    ...&lt;br /&gt;    break&lt;br /&gt;while run_else:&lt;br /&gt;    ...&lt;br /&gt;    break&lt;br /&gt;&lt;br /&gt;&amp;#x2018;elif&amp;#x2019; can be nested/recursive inside 2nd &amp;#x2018;while&amp;#x2019;&lt;/p&gt;&amp;#x2014; wouter bolsterlee &amp;#x1F3B9;&amp;#x1F468;&amp;#x200D;&amp;#x1F4BB;&amp;#x1F33B; (@wbolster) &lt;a href=&quot;https://twitter.com/wbolster/status/1559091101725851648?ref_src=twsrc%5Etfw&quot;&gt;August 15, 2022&lt;/a&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Now I had already dealt with &lt;a href=&quot;https://snarky.ca/unravelling-elif-else-from-if-statements/&quot;&gt;&lt;code&gt;else&lt;/code&gt; (and &lt;code&gt;elif&lt;/code&gt;) when it came to &lt;code&gt;if&lt;/code&gt;&lt;/a&gt;, but the tweet did make me realize that I could actually unravel &lt;code&gt;if&lt;/code&gt; itself!&lt;/p&gt;&lt;p&gt;The key insight is that if you put a &lt;code&gt;break&lt;/code&gt; at the very end of a &lt;code&gt;while&lt;/code&gt; statement, it will exit the loop unconditionally. That means if you make the conditional guard on the &lt;code&gt;while&lt;/code&gt; loop be what the conditional guard would have been for an &lt;code&gt;if&lt;/code&gt; statement, you end up with the same outcome!&lt;/p&gt;&lt;p&gt;Take the following example:&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;if A:
+    B&lt;/code&gt;&lt;/pre&gt;Simple &lt;code&gt;if&lt;/code&gt; statement example&lt;p&gt;By placing that &lt;code&gt;break&lt;/code&gt; statement at the end of the block, you can translate that &lt;code&gt;if&lt;/code&gt; statement into a &lt;code&gt;while&lt;/code&gt; statement:&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;while A:
+    B
+    break&lt;/code&gt;&lt;/pre&gt;Unravelling of &lt;code&gt;if&lt;/code&gt; into &lt;code&gt;while&lt;/code&gt; by using &lt;code&gt;break&lt;/code&gt;&lt;p&gt;And since &lt;a href=&quot;https://snarky.ca/unravelling-break-and-continue/&quot;&gt;&lt;code&gt;break&lt;/code&gt; was already unravelled&lt;/a&gt;, you can simply this even further:&lt;/p&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;_done = False
+
+while not _done and A:
+    B
+    _done = True&lt;/code&gt;&lt;/pre&gt;Unravelling &lt;code&gt;if&lt;/code&gt; into &lt;code&gt;while&lt;/code&gt; without using &lt;code&gt;break&lt;/code&gt;&lt;p&gt;The key observation is you &lt;strong&gt;must&lt;/strong&gt; put the &lt;code&gt;break&lt;/code&gt;-substituting circuit breaker &lt;strong&gt;first&lt;/strong&gt; in the conditional guard to avoid executing the conditional guard inherited from the &lt;code&gt;if&lt;/code&gt; statement itself. If you don&amp;amp;apost then you run the risk of side-effects in the &lt;code&gt;if&lt;/code&gt; guard being triggered twice (and that would never happen in a normal &lt;code&gt;if&lt;/code&gt; statement).&lt;/p&gt;</description>
+	<pubDate>Tue, 11 Oct 2022 17:23:00 +0000</pubDate>
+</item>
+<item>
+	<title>PyCharm: PyCharm 2022.2.3 Is Out!</title>
+	<guid>https://blog.jetbrains.com/pycharm/2022/10/pycharm-2022-2-3/</guid>
+	<link>https://blog.jetbrains.com/pycharm/2022/10/pycharm-2022-2-3/</link>
+	<description>&lt;p&gt;We are releasing PyCharm 2022.2.3, which contains important fixes for workflows, including remote interpreters, and fixes for working with MicroPython plugin and the recent Matplotlib 3.6.0 package.&lt;/p&gt;
+
+
+
+&lt;img width=&quot;2560&quot; height=&quot;1200&quot; src=&quot;https://blog.jetbrains.com/wp-content/uploads/2022/10/Release_Preview_image_1280x600_PyCharm_3-2x.png&quot; alt=&quot;&quot; class=&quot;wp-image-285888&quot; /&gt;
+
+
+
+&lt;p&gt;You can update to this version from inside the IDE, by using the &lt;a href=&quot;https://www.jetbrains.com/toolbox-app/&quot;&gt;Toolbox App&lt;/a&gt;, or by using snaps for Ubuntu. You can also download it from our &lt;a href=&quot;https://www.jetbrains.com/pycharm/download/&quot;&gt;website&lt;/a&gt;.&lt;/p&gt;
+
+
+
+&lt;p&gt;&lt;p align=&quot;center&quot;&gt;&lt;a class=&quot;jb-download-button&quot; href=&quot;https://www.jetbrains.com/pycharm/download&quot;&gt;DOWNLOAD PYCHARM 2022.2.3&lt;/a&gt;&lt;/p&gt;&lt;/p&gt;
+
+
+
+&lt;p&gt;Here are the main updates:&lt;/p&gt;
+
+
+
+&lt;ul&gt;&lt;li&gt;SSH interpreter: Reopening a project no longer triggers the upload of unchanged project files or rewrites the remote file permissions. [&lt;a href=&quot;https://youtrack.jetbrains.com/issue/PY-55540/Unchanged-files-are-re-uploaded-on-project-reopening-and-their-permissions-are-changed-to-644&quot;&gt;PY-55540&lt;/a&gt;]&lt;/li&gt;&lt;li&gt;SSH interpreter: The debugger can access remote sources. [&lt;a href=&quot;https://youtrack.jetbrains.com/issue/PY-55821&quot;&gt;PY-55821&lt;/a&gt;]&lt;/li&gt;&lt;li&gt;SSH interpreter: Interpreter names are no longer duplicated when the interpreters are created over the same SSH host. [&lt;a href=&quot;https://youtrack.jetbrains.com/issue/PY-56107&quot;&gt;PY-56107&lt;/a&gt;]&lt;/li&gt;&lt;li&gt;Windows: We fixed several issues related to how PyCharm handles non-ASCII characters. [&lt;a href=&quot;https://youtrack.jetbrains.com/issue/PY-56466&quot;&gt;PY-56466&lt;/a&gt;], [&lt;a href=&quot;https://youtrack.jetbrains.com/issue/PY-56467&quot;&gt;PY-56467&lt;/a&gt;]&lt;/li&gt;&lt;li&gt;Opening projects with the MicroPython plugin in PyCharm no longer causes errors. [&lt;a href=&quot;https://youtrack.jetbrains.com/issue/PY-56317&quot;&gt;PY-56317&lt;/a&gt;]&lt;/li&gt;&lt;li&gt;Creating a new React project from the welcome screen works as expected. [&lt;a href=&quot;https://youtrack.jetbrains.com/issue/PY-56339&quot;&gt;PY-56339&lt;/a&gt;]&amp;nbsp;&lt;/li&gt;&lt;li&gt;Console: Due to a recent change in Matplotlib 3.6.0, running code resulting in plot displays led to an error. This has been fixed. [&lt;a href=&quot;https://youtrack.jetbrains.com/issue/PY-56370/No-plots-with-Matplotlib-360-AttributeError-module-backendinteragg-has-no-attribute-FigureCanvas-Did-you-mean-FigureCanvasAgg&quot;&gt;PY-56370&lt;/a&gt;]&lt;/li&gt;&lt;/ul&gt;
+
+
+
+&lt;p&gt;For the full list of improvements, please refer to the &lt;a href=&quot;https://youtrack.jetbrains.com/articles/PY-A-233538010/PyCharm-202223-222434523-build-Release-Notes&quot;&gt;release notes&lt;/a&gt;. Share your feedback in the comments under this post or in our &lt;a href=&quot;https://youtrack.jetbrains.com/issues/PY&quot;&gt;issue tracker&lt;/a&gt;.&lt;/p&gt;</description>
+	<pubDate>Tue, 11 Oct 2022 16:21:54 +0000</pubDate>
+</item>
+<item>
+	<title>Real Python: Providing Multiple Constructors in Your Python Classes</title>
+	<guid>https://realpython.com/courses/multiple-constructors-python/</guid>
+	<link>https://realpython.com/courses/multiple-constructors-python/</link>
+	<description>&lt;p&gt;Sometimes you need to write a Python class that provides multiple ways to construct objects. In other words, you want a class that implements &lt;strong&gt;multiple constructors&lt;/strong&gt;. This kind of class comes in handy when you need to create instances using different types or numbers of arguments. Having the tools to provide multiple constructors will help you write flexible classes that can adapt to changing needs.&lt;/p&gt;
+&lt;p&gt;Python offers several techniques and tools that you can use to construct classes, including simulating multiple constructors through optional arguments, customizing instance creation via class methods, and doing special dispatch with decorators. If you want to learn about these techniques and tools, then this video course is for you.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;In this video course, you&amp;rsquo;ll learn how to:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use &lt;strong&gt;optional arguments&lt;/strong&gt; and &lt;strong&gt;type checking&lt;/strong&gt; to simulate multiple constructors&lt;/li&gt;
+&lt;li&gt;Write multiple constructors using the built-in &lt;strong&gt;&lt;code&gt;@classmethod&lt;/code&gt;&lt;/strong&gt; decorator&lt;/li&gt;
+&lt;li&gt;Overload your class constructors using the &lt;strong&gt;&lt;code&gt;@singledispatchmethod&lt;/code&gt;&lt;/strong&gt; decorator&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You&amp;rsquo;ll also get a peek under the hood at how Python internally &lt;strong&gt;constructs instances&lt;/strong&gt; of a regular class and how some &lt;strong&gt;standard-library classes&lt;/strong&gt; provide multiple constructors.&lt;/p&gt;
+&lt;p&gt;To get the most out of this video course, you should have basic knowledge of &lt;a href=&quot;https://realpython.com/python3-object-oriented-programming/&quot;&gt;object-oriented programming&lt;/a&gt; and understand how to define &lt;a href=&quot;https://realpython.com/instance-class-and-static-methods-demystified/&quot;&gt;class methods&lt;/a&gt; with &lt;code&gt;@classmethod&lt;/code&gt;. You should also have experience working with &lt;a href=&quot;https://realpython.com/primer-on-python-decorators/&quot;&gt;decorators&lt;/a&gt; in Python.&lt;/p&gt;
+        &lt;hr /&gt;
+        &lt;p&gt;&lt;em&gt;[ Improve Your Python With 🐍 Python Tricks 💌 – Get a short &amp;amp; sweet Python Trick delivered to your inbox every couple of days. &lt;a href=&quot;https://realpython.com/python-tricks/?utm_source=realpython&amp;utm_medium=rss&amp;utm_campaign=footer&quot;&gt;&amp;gt;&amp;gt; Click here to learn more and see examples&lt;/a&gt; ]&lt;/em&gt;&lt;/p&gt;</description>
+	<pubDate>Tue, 11 Oct 2022 14:00:00 +0000</pubDate>
+</item>
+<item>
+	<title>IslandT: Python Example — What is the total ASCII values of characters in the Hello World string</title>
+	<guid>https://islandtropicaman.com/wp/2022/10/11/python-example-what-is-the-total-ascii-values-of-characters-in-the-hello-world-string/</guid>
+	<link>https://islandtropicaman.com/wp/2022/10/11/python-example-what-is-the-total-ascii-values-of-characters-in-the-hello-world-string/</link>
+	<description>&lt;p&gt;I always want to know what is the total value of all the ASCII values of characters in the Hello World string. In order to get the ASCII value of a character, I will use the Python ord method to find it out. I will loop through each character in the Hello World string using the for loop and then sum up their ASCII values as follows:-&lt;/p&gt;
+&lt;pre class=&quot;brush: php; title: ; notranslate&quot;&gt;
+total = 0
+for a in &amp;quot;Hello World&amp;quot;:
+   total+=ord(a)
+print(total) # 1052
+&lt;/pre&gt;
+&lt;p&gt;Not a very interesting figure indeed, maybe you can start your first Python program with another string that when summing up all the ASCII values of its characters will produce an interesting number instead! &lt;/p&gt;</description>
+	<pubDate>Tue, 11 Oct 2022 10:33:10 +0000</pubDate>
+</item>
+<item>
+	<title>Codementor: Android's Lock Screen Pattern In Pygame</title>
+	<guid>https://www.codementor.io/abdurrahmaanj/android-s-lock-screen-pattern-in-pygame-1y12ejsg3s</guid>
+	<link>https://www.codementor.io/abdurrahmaanj/android-s-lock-screen-pattern-in-pygame-1y12ejsg3s</link>
+	<description>Learn how to implement Android's lock screen pattern in pygame</description>
+	<pubDate>Tue, 11 Oct 2022 05:59:41 +0000</pubDate>
+</item>
+<item>
+	<title>TestDriven.io: Deploying a Django App to Dokku on a DigitalOcean Droplet</title>
+	<guid>https://testdriven.io/blog/django-dokku/</guid>
+	<link>https://testdriven.io/blog/django-dokku/</link>
+	<description>This tutorial looks at how to deploy a Django application to Dokku on a DigitalOcean droplet.</description>
+	<pubDate>Mon, 10 Oct 2022 22:28:15 +0000</pubDate>
+</item>
+<item>
+	<title>Mike Driscoll: The Python Quiz Book Kickstarter</title>
+	<guid>https://www.blog.pythonlibrary.org/2022/10/10/the-python-quiz-book-kickstarter/</guid>
+	<link>https://www.blog.pythonlibrary.org/2022/10/10/the-python-quiz-book-kickstarter/</link>
+	<description>&lt;div class=&quot;mb1&quot;&gt;
+&lt;div class=&quot;public-DraftStyleDefault-block public-DraftStyleDefault-ltr&quot;&gt;&lt;span&gt;Quizzes are a fun way to test your knowledge of something.  They make you think. &lt;/span&gt;&lt;span&gt;The&lt;/span&gt; &lt;span&gt;Python Quiz&lt;/span&gt; &lt;span&gt;Book&lt;/span&gt;&lt;span&gt; is all about brain teasers for the Python programming language. The Python Quiz Book isn't made to teach you Python. It's there to help you test your knowledge or teach you something new about the language.&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;mb1&quot;&gt;
+&lt;div class=&quot;public-DraftStyleDefault-block public-DraftStyleDefault-ltr&quot;&gt;&lt;span&gt; &lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;mb1&quot;&gt;
+&lt;div class=&quot;public-DraftStyleDefault-block public-DraftStyleDefault-ltr&quot;&gt;&lt;strong&gt;The Python Quiz Book&lt;/strong&gt;&lt;span&gt; will contain over &lt;/span&gt;&lt;span&gt;100 quizzes&lt;/span&gt;&lt;span&gt;! The book will also have a companion course on &lt;/span&gt;&lt;a href=&quot;https://teachmepython.com/&quot;&gt;&lt;span&gt;Teach Me Python&lt;/span&gt;&lt;/a&gt;&lt;span&gt; that you can get access to if you pledge for the appropriate level.&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;mb1&quot;&gt;
+&lt;div class=&quot;public-DraftStyleDefault-block public-DraftStyleDefault-ltr&quot;&gt;&lt;span&gt; &lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;mb1&quot;&gt;
+&lt;div class=&quot;public-DraftStyleDefault-block public-DraftStyleDefault-ltr&quot;&gt;&lt;span&gt;The goal of the book is &lt;/span&gt;&lt;span&gt;to help you be a better engineer&lt;/span&gt;&lt;span&gt;. Some of the quizzes will be esoteric or demonstrate bad programming practices. You can learn what &lt;/span&gt;&lt;span&gt;not&lt;/span&gt;&lt;span&gt; to do in your own code. You will also learn neat tips and tricks about Python that you can share with your friends and coworkers.&lt;/span&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;div&gt;You can support my latest Python book on &lt;a href=&quot;https://www.kickstarter.com/projects/driscollis/the-python-quiz-book&quot;&gt;Kickstarter&lt;/a&gt; today. Or &lt;a href=&quot;https://www.dropbox.com/s/05piolsdyol93qd/pyquiz-preview.pdf?dl=0&quot;&gt;download some sample chapters&lt;/a&gt; to check out the book before you commit to purchasing.&lt;/div&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;div&gt;&lt;a href=&quot;https://www.kickstarter.com/projects/driscollis/the-python-quiz-book&quot;&gt;&lt;img class=&quot;aligncenter size-large wp-image-11679&quot; src=&quot;https://www.blog.pythonlibrary.org/wp-content/uploads/2022/10/quiz_kick-1024x698.jpg&quot; alt=&quot;The Python Quiz Book&quot; width=&quot;1024&quot; height=&quot;698&quot; /&gt;&lt;/a&gt;&lt;/div&gt;
+&lt;p&gt;The post &lt;a rel=&quot;nofollow&quot; href=&quot;https://www.blog.pythonlibrary.org/2022/10/10/the-python-quiz-book-kickstarter/&quot;&gt;The Python Quiz Book Kickstarter&lt;/a&gt; appeared first on &lt;a rel=&quot;nofollow&quot; href=&quot;https://www.blog.pythonlibrary.org&quot;&gt;Mouse Vs Python&lt;/a&gt;.&lt;/p&gt;</description>
+	<pubDate>Mon, 10 Oct 2022 16:40:41 +0000</pubDate>
+</item>
+<item>
+	<title>Kushal Das: Introducing pyarti, python module for the Tor Project</title>
+	<guid>https://kushaldas.in/posts/introducing-pyarti-python-module-for-the-tor-project.html</guid>
+	<link>https://kushaldas.in/posts/introducing-pyarti-python-module-for-the-tor-project.html</link>
+	<description>&lt;!--
+.. title: Introducing pyarti, python module for the Tor Project
+.. slug: introducing-pyarti-python-module-for-the-tor-project
+.. date: 2022-10-10T17:30:36+00:00
+.. tags: Privacy, Rust, Python, Tor, Fedora, Debian
+.. link:
+.. description:
+.. type: text
+--&gt;
+&lt;pre&gt;&lt;code&gt;python3 -m pip install pyarti
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/kushaldas/pyarti/&quot;&gt;pyarti&lt;/a&gt; is a Python module written in
+Rust using &lt;a href=&quot;https://gitlab.torproject.org/tpo/core/arti/&quot;&gt;Arti&lt;/a&gt; from the Tor
+Project. Right now pyarti is in the initial stage, and you can create a SOCKS5
+proxy object, and pass any Python connection via it. The following example
+creates a default proxy at port &lt;em&gt;9150&lt;/em&gt; , and then verifies that the
+connection works. Finally we fetch a web page and print the text.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Python&quot;&gt;from pyarti import OnionProxy
+import httpx
+from httpx_socks import SyncProxyTransport
+
+URL = &amp;quot;https://httpbin.org/get&amp;quot;
+
+p = OnionProxy()
+assert p.verify(blocking=True)
+# Now we can use the proxy
+transport = SyncProxyTransport.from_url(&amp;quot;socks5://127.0.0.1:9150&amp;quot;)
+with httpx.Client(transport=transport) as client:
+    res = client.get(URL)
+    assert res.status_code == 200
+    print(res.text)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In the coming months I am hoping to add more detailed API to the module. For now you can read
+the &lt;a href=&quot;https://pyarti.readthedocs.io/en/latest/api.html&quot;&gt;documentation&lt;/a&gt;.&lt;/p&gt;</description>
+	<pubDate>Mon, 10 Oct 2022 16:39:03 +0000</pubDate>
+</item>
+<item>
+	<title>PyBites: Become a more effective learner with Russell Helmstedter</title>
+	<guid>https://pybit.es/articles/pp90-become-a-more-effective-learner/</guid>
+	<link>https://pybit.es/articles/pp90-become-a-more-effective-learner/</link>
+	<description>&lt;p&gt;Listen now:&lt;/p&gt;
+
+
+
+&lt;div id=&quot;buzzsprout-player-11449353&quot;&gt;&lt;/div&gt;
+
+
+
+&lt;p&gt;This week we have Russell Helmstedter (&lt;a href=&quot;https://twitter.com/rhelmstedter&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;@rhelmstedter&lt;/a&gt;) on the show to talk about a book about learning that will blow your mind:&amp;nbsp;&lt;a href=&quot;https://pybitesbooks.com/books/FranDwAAQBAJ&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;Learn Better&lt;/a&gt;&lt;br /&gt;&amp;nbsp;&lt;br /&gt;We talk through the six facets of learning the book discusses:&lt;/p&gt;
+
+
+
+&lt;ul&gt;&lt;li&gt;Value&lt;/li&gt;&lt;li&gt;Target&lt;/li&gt;&lt;li&gt;Develop&lt;/li&gt;&lt;li&gt;Extend&lt;/li&gt;&lt;li&gt;Relate&lt;/li&gt;&lt;li&gt;Rethink&lt;/li&gt;&lt;/ul&gt;
+
+
+
+&lt;p&gt;&amp;#8230; and link them back to Pybites, specifically our platform. &lt;br /&gt;&lt;br /&gt;Expect a lot of useful tips that will increase the important meta skill of &lt;strong&gt;learning&lt;/strong&gt; which will of course help you become a better developer as well!&lt;br /&gt;&lt;br /&gt;Links / resources:&lt;/p&gt;
+
+
+
+&lt;p&gt;&amp;#8211;&amp;nbsp;&lt;a href=&quot;https://www.npr.org/sections/ed/2017/03/22/520843457/you-probably-believe-some-learning-myths-take-our-quiz-to-find-out&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;The article that got Russell on this book&lt;/a&gt;&lt;br /&gt;&amp;#8211;&amp;nbsp;&lt;a href=&quot;https://pybitesbooks.com/books/FranDwAAQBAJ&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;Learn Better book&lt;/a&gt;&lt;br /&gt;&amp;#8211;&amp;nbsp;&lt;a href=&quot;https://github.com/rhelmstedter/pybites-work/blob/main/podcasts/learn_better_interview.org&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;Russell&amp;#8217;s extensive notes&lt;/a&gt;&amp;nbsp;(kudos, thanks!)&lt;br /&gt;&amp;#8211;&amp;nbsp;&lt;a href=&quot;https://codechalleng.es/&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;Our platform&lt;/a&gt;&amp;nbsp;that embraces a lot of what&amp;#8217;s discussed in the book.&lt;br /&gt;&amp;#8211;&amp;nbsp;&lt;a href=&quot;https://pybitesbooks.com/books/GmcpCgAAQBAJ&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;Peak&lt;/a&gt;,&amp;nbsp;&lt;em&gt;the&amp;nbsp;&lt;/em&gt;book on deliberate practice, and&amp;nbsp;&lt;a href=&quot;https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1553-2712.2008.00227.x&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;mentioned Ericsson&amp;#8217;s article / study&lt;/a&gt;&lt;br /&gt;&amp;#8211; What is Zettelkasten? It&amp;#8217;s a note taking system &amp;#8211;&amp;nbsp;&lt;a href=&quot;https://pybit.es/articles/a-super-simple-zettelkasten-note-taking-system/&quot; rel=&quot;noreferrer noopener&quot; target=&quot;_blank&quot;&gt;related Pybites article&lt;/a&gt;&lt;/p&gt;</description>
+	<pubDate>Mon, 10 Oct 2022 15:57:50 +0000</pubDate>
+</item>
+<item>
+	<title>Python Morsels: Unindenting multi-line strings in Python</title>
+	<guid>https://www.pythonmorsels.com/dedent/</guid>
+	<link>https://www.pythonmorsels.com/dedent/</link>
+	<description>&lt;p&gt;Need a multi-line string but don't want to include a big block of manually dedented text in your Python code? Use textwrap.dedent!&lt;/p&gt;
+
+
+&lt;div&gt;
+  
+    &lt;img width=&quot;480&quot; height=&quot;270&quot; src=&quot;https://i.vimeocdn.com/filter/overlay?src0=https%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F1511937327-9590e5394b479e1ec8704ce355e43c3a1169b9ab3cc54936132a8f5b6b6891eb-d_1920x1080&amp;src1=http%3A%2F%2Ff.vimeocdn.com%2Fp%2Fimages%2Fcrawler_play.png&quot; /&gt;
+  
+  &lt;p&gt;
+  &lt;strong&gt;Table of contents&lt;/strong&gt;
+  &lt;ol&gt;
+  
+  &lt;li&gt;&lt;a href=&quot;https://www.pythonmorsels.com/dedent/#manually-dedenting-multi-line-strings&quot; target=&quot;_blank&quot;&gt;Manually dedenting multi-line strings&lt;/a&gt;&lt;/li&gt;
+  
+  &lt;li&gt;&lt;a href=&quot;https://www.pythonmorsels.com/dedent/#using-textwrapdedent-to-unindent-strings&quot; target=&quot;_blank&quot;&gt;Using &lt;code&gt;textwrap.dedent&lt;/code&gt; to unindent strings&lt;/a&gt;&lt;/li&gt;
+  
+  &lt;li&gt;&lt;a href=&quot;https://www.pythonmorsels.com/dedent/#mind-your-newlines&quot; target=&quot;_blank&quot;&gt;Mind your newlines&lt;/a&gt;&lt;/li&gt;
+  
+  &lt;li&gt;&lt;a href=&quot;https://www.pythonmorsels.com/dedent/#combining-dedent-with-strip-to-make-the-code-more-readable&quot; target=&quot;_blank&quot;&gt;Combining &lt;code&gt;dedent&lt;/code&gt; with &lt;code&gt;strip&lt;/code&gt; to make the code more readable&lt;/a&gt;&lt;/li&gt;
+  
+  &lt;li&gt;&lt;a href=&quot;https://www.pythonmorsels.com/dedent/#dedent-maintains-relative-indentation-levels&quot; target=&quot;_blank&quot;&gt;&lt;code&gt;dedent&lt;/code&gt; maintains relative indentation levels&lt;/a&gt;&lt;/li&gt;
+  
+  &lt;li&gt;&lt;a href=&quot;https://www.pythonmorsels.com/dedent/#use-textwrapdedent-to-unindent-strings&quot; target=&quot;_blank&quot;&gt;Use &lt;code&gt;textwrap.dedent&lt;/code&gt; to unindent strings&lt;/a&gt;&lt;/li&gt;
+  
+  &lt;/ol&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  
+    &lt;h2&gt;Manually dedenting multi-line strings&lt;/h2&gt;
+    
+      
+        &lt;p&gt;Here we have a function that prints out a copyright statement:&lt;/p&gt;
+
+      
+        &lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;copyright&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;        Copyright (c) 1991-2000 ACME Corp&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;        All Rights Reserved.&lt;/span&gt;
+
+&lt;span class=&quot;s2&quot;&gt;        Copyright (c) 2000-2030 Cyberdyne&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;        All Rights Reserved.&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+      
+        &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;copyright&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;        Copyright (c) 1991-2000 ACME Corp&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;        All Rights Reserved.&lt;/span&gt;
+
+&lt;span class=&quot;s2&quot;&gt;        Copyright (c) 2000-2030 Cyberdyne&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;        All Rights Reserved.&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+      
+        &lt;p&gt;This function works, but the copyright statement that it prints out is &lt;strong&gt;indented&lt;/strong&gt;:&lt;/p&gt;
+
+      
+        &lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;copyright&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;        Copyright (c) 1991-2000 ACME Corp&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;        All Rights Reserved.&lt;/span&gt;
+
+&lt;span class=&quot;go&quot;&gt;        Copyright (c) 2000-2030 Cyberdyne&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;        All Rights Reserved.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+      
+        &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;copyright&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;        Copyright (c) 1991-2000 ACME Corp&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;        All Rights Reserved.&lt;/span&gt;
+
+&lt;span class=&quot;go&quot;&gt;        Copyright (c) 2000-2030 Cyberdyne&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;        All Rights Reserved.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+      
+        &lt;p&gt;Each line in this copyright statement begins with eight spaces.
+This happens because in our &lt;em&gt;code&lt;/em&gt;, the text within our string begins with eight spaces before each line.&lt;/p&gt;
+
+      
+        &lt;p&gt;We can fix this problem by &lt;em&gt;manually&lt;/em&gt; dedenting the text within this string:&lt;/p&gt;
+
+      
+        &lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;copyright&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;Copyright (c) 1991-2000 ACME Corp&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;All Rights Reserved.&lt;/span&gt;
+
+&lt;span class=&quot;s2&quot;&gt;Copyright (c) 2000-2030 Cyberdyne&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;All Rights Reserved.&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+      
+        &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;copyright&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;Copyright (c) 1991-2000 ACME Corp&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;All Rights Reserved.&lt;/span&gt;
+
+&lt;span class=&quot;s2&quot;&gt;Copyright (c) 2000-2030 Cyberdyne&lt;/span&gt;
+&lt;span class=&quot;s2&quot;&gt;All Rights Reserved.&quot;&quot;&quot;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+      
+        &lt;p&gt;While this does work:&lt;/p&gt;
+
+      
+        &lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;copyright&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;Copyright (c) 1991-2000 ACME Corp&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;All Rights Reserved.&lt;/span&gt;
+
+&lt;span class=&quot;go&quot;&gt;Copyright (c) 2000-2030 Cyberdyne&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;All Rights Reserved.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+      
+        &lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;copyright&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;Copyright (c) 1991-2000 ACME Corp&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;All Rights Reserved.&lt;/span&gt;
+
+&lt;span class=&quot;go&quot;&gt;Copyright (c) 2000-2030 Cyberdyne&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;All Rights Reserved.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+      
+        &lt;p&gt;This also makes our code a bit tricky to read.&lt;/p&gt;
+
+      
+        &lt;p&gt;Our code is &lt;strong&gt;less readable&lt;/strong&gt; than before because up here, we our code &lt;strong&gt;suddenly dedents&lt;/strong&gt; in the middle of our string.&lt;/p&gt;
+
+      
+        &lt;p&gt;We could fix this problem in by using the &lt;code&gt;dedent&lt;/code&gt; function in Python's &lt;code&gt;textwrap&lt;/code&gt; module.&lt;/p&gt;
+
+      
+    
+  
+    &lt;h2&gt;Using &lt;code&gt;textwrap.dedent&lt;/code&gt; to unindent strings&lt;/h2&gt;
+    
+      &lt;p&gt;The &lt;code&gt;dedent&lt;/code&gt; function allows us …&lt;/p&gt;
+    
+  
+&lt;/div&gt;
+&lt;h3&gt;&lt;a href=&quot;https://www.pythonmorsels.com/dedent/&quot; target=&quot;_blank&quot;&gt;Read the full article: https://www.pythonmorsels.com/dedent/&lt;/a&gt;&lt;/h3&gt;</description>
+	<pubDate>Mon, 10 Oct 2022 14:59:09 +0000</pubDate>
+</item>
+
+</channel>
+</rss>
