@@ -11,6 +11,6 @@ def read_into_buffer(filename):
 with open("helper_files/sample.bin", "wb") as f:
     f.write(b"Hello world")
 
-buf = read_into_buffer("sample.bin")
+buf = read_into_buffer("helper_files/sample.bin")
 buf[:5] = b"Hallo"
 print(buf)
