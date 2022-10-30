@@ -47,26 +47,25 @@
 # c = C()
 class Base:
     def __init__(self):
-        print('Base.__init__')
-
-
-class A(Base):
-    def __init__(self):
-        super().__init__(self)
-        print('A.__init__')
+        print("Base.__init__")
 
 
 class B(Base):
     def __init__(self):
-        super().__init__(self)
-        print('B.__init__')
+        super().__init__()
+        print("B.__init__")
 
 
-class C(A,B):
+class A(Base):
     def __init__(self):
-        A.__init__(self)
-        B.__init__(self)
-        print('C.__init__')
+        super().__init__()
+        print("A.__init__")
+
+
+class C(B, A):
+    def __init__(self):
+        super().__init__()
+        print("C.__init__")
 
 
 c = C()
