@@ -9,3 +9,8 @@ class Student:
 
     def _private_method(self):
         pass
+
+
+b = Student()
+
+print(b.__baz)
