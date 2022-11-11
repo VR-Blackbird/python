@@ -1,5 +1,10 @@
 from abc import ABCMeta, ABC, abstractmethod
 import io
+import collections.abc
+
+
+a = [1, 2, 3, 4, 5]
+d = {"ajs": 10, "bahs": 19}
 
 
 class SomeAbstractClass(ABC):
@@ -49,3 +54,9 @@ IStream.register(io.IOBase)
 
 f = open("helper_files/abstract.txt")
 print(isinstance(f, IStream))
+
+print(isinstance(a, collections.abc.Sequence))
+print(isinstance(a, collections.abc.Iterable))
+print(isinstance(a, collections.abc.Mapping))
+print(isinstance(d, collections.abc.Mapping))
+print(isinstance(d, collections.abc.Sized))
