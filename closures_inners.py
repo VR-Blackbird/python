@@ -13,9 +13,7 @@ def Boss():
 
     new.set_seq = set_seq
     new.get_seq = get_seq
-
     return new
-
 
 new = Boss()
 new()
