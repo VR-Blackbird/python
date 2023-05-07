@@ -1,5 +1,6 @@
 from clock import clock
 import time
+import functools
 
 @clock
 def factorial(number):
@@ -9,12 +10,21 @@ def factorial(number):
 def snooze(seconds):
     time.sleep(seconds)
 
+@functools.lru_cache
+@clock
+def fibonacci(number):
+    if number < 2:
+        return number
+    else:
+        return fibonacci(number-2) + fibonacci(number-1)
 
 def main():
     print("Executing snooze\n")
-    snooze(5)
+    snooze(.12)
     print("Executing facorial of a number\n")
     factorial(10)
+    print("Executing fibonacci series\n")
+    fibonacci(30)
 
 
 if __name__ == '__main__':
