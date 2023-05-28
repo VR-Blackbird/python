@@ -66,7 +66,7 @@ jim = Person("jim", 1111)
 jim.add_to_cart(LineItem("apple", 20, 70))
 jim.add_to_cart(LineItem("Banana", 17, 10))
 
-jim.initiate_order(BulkItemPromo)
+jim.initiate_order(FidelityPromo)
 # print(joe.car[0].)
 print(jim.cart[0].item)
 print(jim.cart[1].item)
