@@ -22,24 +22,16 @@ def apply_discounts(item, percentage):
     )
 
 
-class Promotion(ABC):
-    @abstractmethod
-    def do_discounts(self, person):
-        pass
-
-
-class FidelityPromo(Promotion):
-    def do_discounts(self, person):
-        if person.fidelity > 1000:
-            for item in person.cart:
-                apply_discounts(item, 0.05)
-
-
-class BulkItemPromo(Promotion):
-    def do_discounts(self, person):
+def FidelityPromo(person):
+    if person.fidelity > 1000:
         for item in person.cart:
-            if item.number >= 20:
-                apply_discounts(item, 0.1)
+            apply_discounts(item, 0.05)
+
+
+def BulkItemPromo(person):
+    for item in person.cart:
+        if item.number >= 20:
+            apply_discounts(item, 0.1)
 
 
 class Person:
@@ -52,7 +44,7 @@ class Person:
         self.cart.append(item)
 
     def initiate_order(self, promo):
-        promo.do_discounts(self)
+        promo(self)
 
 
 class LineItem:
@@ -74,7 +66,7 @@ jim = Person("jim", 1111)
 jim.add_to_cart(LineItem("apple", 20, 70))
 jim.add_to_cart(LineItem("Banana", 17, 10))
 
-jim.initiate_order(BulkItemPromo())
+jim.initiate_order(BulkItemPromo)
 # print(joe.car[0].)
 print(jim.cart[0].item)
 print(jim.cart[1].item)
