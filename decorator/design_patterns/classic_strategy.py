@@ -28,7 +28,8 @@ class Lifo(Ordering):
 class Random(Ordering):
     def create_order(self, list):
         new_list = list.copy()
-        return shuffle(new_list)
+        shuffle(new_list)
+        return new_list
 
 
 class CustomerSupport:
