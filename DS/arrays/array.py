@@ -11,7 +11,7 @@ floats_list = [float(x) for x in range(10**7)]
 
 
 print(
-    f"Memory of Array of Floats : {sys.getsizeof(floats_arr)}\nMemory of Array of Lists : {sys.getsizeof(floats_list)}"
+    f"Memory of Array of Floats : {sys.getsizeof(floats_arr)}\nMemory of Array of Lists  : {sys.getsizeof(floats_list)}"
 )
 
 with open("array.bin", "wb") as f:
