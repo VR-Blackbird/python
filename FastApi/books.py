@@ -15,3 +15,10 @@ BOOKS = [
 @app.get("/vr/books")
 def get_all_books():
     return BOOKS
+
+
+@app.get("/vr/books/{title}")
+def get_book(title):
+    for book in BOOKS:
+        if book.get("title").casefold() == title.casefold():
+            return book
