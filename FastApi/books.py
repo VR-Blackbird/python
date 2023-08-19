@@ -12,6 +12,7 @@ BOOKS = [
 ]
 
 
+
 @app.get("/vr/books")
 def get_all_books():
     return BOOKS
