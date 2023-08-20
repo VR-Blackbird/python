@@ -30,3 +30,12 @@ def get_book(author):
     for book in BOOKS:
         if book.get("author", "").casefold() == author.casefold():
             return book
+
+
+@app.get("/vr/books/")
+def get_book_by_category(category):
+    books = []
+    for book in BOOKS:
+        if book.get("category", "").casefold() == category.casefold():
+            books.append(book)
+    return books
