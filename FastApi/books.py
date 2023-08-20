@@ -65,3 +65,4 @@ def delete_book(title):
     for index, book in enumerate(BOOKS):
         if book.get("title").casefold() == title.casefold():
             BOOKS.pop(index)
+            break
