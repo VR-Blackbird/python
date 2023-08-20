@@ -58,3 +58,10 @@ def update_book(my_book=Body()):
     for book in BOOKS:
         if book.get("title").casefold() == my_book.get("title").casefold():
             book.update(my_book)
+
+
+@app.delete("/vr/books/delete_book")
+def delete_book(title):
+    for index, book in enumerate(BOOKS):
+        if book.get("title").casefold() == title.casefold():
+            BOOKS.pop(index)
