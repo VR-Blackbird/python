@@ -17,8 +17,16 @@ def get_all_books():
     return BOOKS
 
 
-@app.get("/vr/books/{title}")
+@app.get("/vr/books/title/{title}")
 def get_book(title):
     for book in BOOKS:
         if book.get("title").casefold() == title.casefold():
+            return book
+
+
+@app.get("/vr/books/author/{author}")
+def get_book(author):
+    books = []
+    for book in BOOKS:
+        if book.get("author", "").casefold() == author.casefold():
             return book
