@@ -26,14 +26,23 @@ def get_book(title):
 
 @app.get("/vr/books/author/{author}")
 def get_book(author):
-    books = []
     for book in BOOKS:
         if book.get("author", "").casefold() == author.casefold():
-            return book
+            yield book
 
 
 @app.get("/vr/books/")
 def get_book_by_category(category):
     for book in BOOKS:
         if book.get("category", "").casefold() == category.casefold():
+            yield book
+
+
+@app.get("/vr/books/{author}")
+def get_book_by_author_category(author: str, category: str):
+    for book in BOOKS:
+        if (
+            book.get("author").casefold() == author.casefold()
+            and book.get("category").casefold() == category.casefold()
+        ):
             yield book
