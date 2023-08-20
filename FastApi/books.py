@@ -51,3 +51,10 @@ def get_book_by_author_category(author: str, category: str):
 @app.post("/vr/books/create_book")
 def add_book(book=Body()):
     BOOKS.append(book)
+
+
+@app.put("/vr/books/update_book")
+def update_book(my_book=Body()):
+    for book in BOOKS:
+        if book.get("title").casefold() == my_book.get("title").casefold():
+            book.update(my_book)
