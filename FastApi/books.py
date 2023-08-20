@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Body
 
 app = FastAPI()
 
@@ -46,3 +46,8 @@ def get_book_by_author_category(author: str, category: str):
             and book.get("category").casefold() == category.casefold()
         ):
             yield book
+
+
+@app.post("/vr/books/create_book")
+def add_book(book=Body()):
+    BOOKS.append(book)
