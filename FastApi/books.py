@@ -20,21 +20,21 @@ def get_all_books():
 @app.get("/vr/books/title/{title}")
 def get_book(title):
     for book in BOOKS:
-        if book.get("title").casefold() == title.casefold():
+        if book.get("title").lower() == title.lower():
             return book
 
 
 @app.get("/vr/books/author/{author}")
 def get_book(author):
     for book in BOOKS:
-        if book.get("author", "").casefold() == author.casefold():
+        if book.get("author", "").lower() == author.lower():
             yield book
 
 
 @app.get("/vr/books/")
 def get_book_by_category(category):
     for book in BOOKS:
-        if book.get("category", "").casefold() == category.casefold():
+        if book.get("category", "").lower() == category.lower():
             yield book
 
 
@@ -42,8 +42,8 @@ def get_book_by_category(category):
 def get_book_by_author_category(author: str, category: str):
     for book in BOOKS:
         if (
-            book.get("author").casefold() == author.casefold()
-            and book.get("category").casefold() == category.casefold()
+            book.get("author").lower() == author.lower()
+            and book.get("category").lower() == category.lower()
         ):
             yield book
 
@@ -56,13 +56,13 @@ def add_book(book=Body()):
 @app.put("/vr/books/update_book")
 def update_book(my_book=Body()):
     for book in BOOKS:
-        if book.get("title").casefold() == my_book.get("title").casefold():
+        if book.get("title").lower() == my_book.get("title").lower():
             book.update(my_book)
 
 
 @app.delete("/vr/books/delete_book")
 def delete_book(title):
     for index, book in enumerate(BOOKS):
-        if book.get("title").casefold() == title.casefold():
+        if book.get("title").lower() == title.lower():
             BOOKS.pop(index)
             break
