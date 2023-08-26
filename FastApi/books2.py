@@ -58,6 +58,13 @@ def get_book_by_rating(rating: int):
             yield book
 
 
+@app.put("/VR/books/update_book")
+def update_book(book_request: BookRequest):
+    for book in BOOKS:
+        if book["id"] == book_request.model_dump()["id"]:
+            book.update(book_request)
+
+
 @app.post("/VR/books/create_book")
 def add_book(book_request: BookRequest):
     new_book = Book(**book_request.model_dump())
