@@ -33,7 +33,7 @@ BOOKS = [
         1, "Computer Hands-on", "Gordon Ramsay", "Book with deep computer aspects", 4
     )._asdict(),
     Book(
-        2, "Data structures and Algorithms deep dive", "Venkat", "Advanced concepts", 3
+        2, "Data structures and Algorithms deep dive", "Venkat", "Advanced concepts", 5
     )._asdict(),
     Book(3, "Graph theory", "Gamilia", "Dupe", 5)._asdict(),
 ]
@@ -42,6 +42,20 @@ BOOKS = [
 @app.get("/VR/books")
 def read_all_books():
     return BOOKS
+
+
+@app.get("/VR/books/{book_id}")
+def get_book_by_id(book_id: int):
+    for book in BOOKS:
+        if book["id"] == book_id:
+            return book
+
+
+@app.get("/VR/books/")
+def get_book_by_rating(rating: int):
+    for book in BOOKS:
+        if book["rating"] == rating:
+            yield book
 
 
 @app.post("/VR/books/create_book")
