@@ -1,5 +1,7 @@
-from fastapi import FastAPI, Body
-from pydantic import BaseModel
+from typing import Optional
+
+from fastapi import FastAPI
+from pydantic import BaseModel, Field
 from collections import namedtuple
 
 app = FastAPI()
@@ -20,11 +22,11 @@ BOOKS = [
 
 
 class BookRequest(BaseModel):
-    id: int
-    title: str
-    author: str
-    description: str
-    rating: int
+    id: Optional[int]
+    title: str = Field(min_length=3)
+    author: str = Field(min_length=1)
+    description: str = Field(min_length=1, max_length=100)
+    rating: int = Field(ge=0, le=5)
 
 
 @app.get("/VR/books")
@@ -35,4 +37,9 @@ def read_all_books():
 @app.post("/VR/books/create_book")
 def add_book(book_request: BookRequest):
     new_book = Book(**book_request.model_dump())
-    BOOKS.append(new_book._asdict())
+    BOOKS.append(add_book_id(new_book._asdict()))
+
+
+def add_book_id(book):
+    book["id"] = 1 if len(BOOKS) == 0 else BOOKS[-1]["id"] + 1
+    return book
