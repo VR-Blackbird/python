@@ -10,6 +10,24 @@ app = FastAPI()
 Book = namedtuple("Book", ["id", "title", "author", "description", "rating"])
 
 
+class BookRequest(BaseModel):
+    id: Optional[int] = None
+    title: str = Field(min_length=3)
+    author: str = Field(min_length=1)
+    description: str = Field(min_length=1, max_length=100)
+    rating: int = Field(ge=0, le=5)
+
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "title": "A new book",
+                "author": "Bombarded",
+                "description": "Something got bombarded",
+                "rating": 4,
+            }
+        }
+
+
 BOOKS = [
     Book(
         1, "Computer Hands-on", "Gordon Ramsay", "Book with deep computer aspects", 4
@@ -19,14 +37,6 @@ BOOKS = [
     )._asdict(),
     Book(3, "Graph theory", "Gamilia", "Dupe", 5)._asdict(),
 ]
-
-
-class BookRequest(BaseModel):
-    id: Optional[int]
-    title: str = Field(min_length=3)
-    author: str = Field(min_length=1)
-    description: str = Field(min_length=1, max_length=100)
-    rating: int = Field(ge=0, le=5)
 
 
 @app.get("/VR/books")
