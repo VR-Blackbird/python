@@ -61,8 +61,15 @@ def get_book_by_rating(rating: int):
 @app.put("/VR/books/update_book")
 def update_book(book_request: BookRequest):
     for book in BOOKS:
-        if book["id"] == book_request.model_dump()["id"]:
+        if book["id"] == book_request.id:
             book.update(book_request)
+
+
+@app.delete("/VR/books/delete_book")
+def delete_book(book_id):
+    for index, book in enumerate(BOOKS):
+        BOOKS.pop(index)
+        break
 
 
 @app.post("/VR/books/create_book")
