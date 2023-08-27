@@ -87,9 +87,9 @@ def update_book(book_request: BookRequest):
 
 
 @app.delete("/VR/books/delete_book")
-def delete_book(book_id):
+def delete_book(book_id: int):
     for index, book in enumerate(BOOKS):
-        if index == book_id:
+        if book["id"] == book_id:
             BOOKS.pop(index)
             break
 
