@@ -1,6 +1,6 @@
 from typing import Optional
 
-from fastapi import FastAPI, Path
+from fastapi import FastAPI, Path, Query
 from pydantic import BaseModel, Field
 from collections import namedtuple
 
@@ -66,14 +66,14 @@ def get_book_by_id(book_id: int = Path(gt=0)):
 
 
 @app.get("/VR/books/rating/")
-def get_book_by_rating(rating: int):
+def get_book_by_rating(rating: int = Query(ge=0, le=5)):
     for book in BOOKS:
         if book["rating"] == rating:
             yield book
 
 
 @app.get("/VR/books/publish/")
-def get_book_by_date(published_date: int):
+def get_book_by_date(published_date: int = Query(gt=1000)):
     for book in BOOKS:
         if book["published_date"] == published_date:
             yield book
@@ -87,7 +87,7 @@ def update_book(book_request: BookRequest):
 
 
 @app.delete("/VR/books/delete_book")
-def delete_book(book_id: int):
+def delete_book(book_id: int = Query(gt=0)):
     for index, book in enumerate(BOOKS):
         if book["id"] == book_id:
             BOOKS.pop(index)
