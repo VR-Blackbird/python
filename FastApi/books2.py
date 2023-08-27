@@ -7,7 +7,9 @@ from collections import namedtuple
 app = FastAPI()
 
 
-Book = namedtuple("Book", ["id", "title", "author", "description", "rating"])
+Book = namedtuple(
+    "Book", ["id", "title", "author", "description", "rating", "published_date"]
+)
 
 
 class BookRequest(BaseModel):
@@ -16,6 +18,7 @@ class BookRequest(BaseModel):
     author: str = Field(min_length=1)
     description: str = Field(min_length=1, max_length=100)
     rating: int = Field(ge=0, le=5)
+    published_date: int
 
     class Config:
         json_schema_extra = {
@@ -24,18 +27,29 @@ class BookRequest(BaseModel):
                 "author": "Bombarded",
                 "description": "Something got bombarded",
                 "rating": 4,
+                "published_date": 1987,
             }
         }
 
 
 BOOKS = [
     Book(
-        1, "Computer Hands-on", "Gordon Ramsay", "Book with deep computer aspects", 4
+        1,
+        "Computer Hands-on",
+        "Gordon Ramsay",
+        "Book with deep computer aspects",
+        4,
+        2012,
     )._asdict(),
     Book(
-        2, "Data structures and Algorithms deep dive", "Venkat", "Advanced concepts", 5
+        2,
+        "Data structures and Algorithms deep dive",
+        "Venkat",
+        "Advanced concepts",
+        5,
+        2011,
     )._asdict(),
-    Book(3, "Graph theory", "Gamilia", "Dupe", 5)._asdict(),
+    Book(3, "Graph theory", "Gamilia", "Dupe", 5, 2011)._asdict(),
 ]
 
 
@@ -51,10 +65,17 @@ def get_book_by_id(book_id: int):
             return book
 
 
-@app.get("/VR/books/")
+@app.get("/VR/books/rating/")
 def get_book_by_rating(rating: int):
     for book in BOOKS:
         if book["rating"] == rating:
+            yield book
+
+
+@app.get("/VR/books/publish/")
+def get_book_by_date(published_date: int):
+    for book in BOOKS:
+        if book["published_date"] == published_date:
             yield book
 
 
