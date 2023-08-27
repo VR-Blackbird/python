@@ -2,6 +2,7 @@ from typing import Optional
 
 from fastapi import FastAPI, Path, Query, HTTPException
 from pydantic import BaseModel, Field
+from starlette import status
 from collections import namedtuple
 
 app = FastAPI()
@@ -53,12 +54,12 @@ BOOKS = [
 ]
 
 
-@app.get("/VR/books")
+@app.get("/VR/books", status_code=status.HTTP_200_OK)
 def read_all_books():
     return BOOKS
 
 
-@app.get("/VR/books/{book_id}")
+@app.get("/VR/books/{book_id}", status_code=status.HTTP_200_OK)
 def get_book_by_id(book_id: int = Path(gt=0)):
     for book in BOOKS:
         if book["id"] == book_id:
@@ -66,28 +67,28 @@ def get_book_by_id(book_id: int = Path(gt=0)):
     raise HTTPException(404, "Book not found")
 
 
-@app.get("/VR/books/rating/")
+@app.get("/VR/books/rating/", status_code=status.HTTP_200_OK)
 def get_book_by_rating(rating: int = Query(ge=0, le=5)):
     for book in BOOKS:
         if book["rating"] == rating:
             yield book
 
 
-@app.get("/VR/books/publish/")
+@app.get("/VR/books/publish/", status_code=status.HTTP_200_OK)
 def get_book_by_date(published_date: int = Query(gt=1000)):
     for book in BOOKS:
         if book["published_date"] == published_date:
             yield book
 
 
-@app.put("/VR/books/update_book")
+@app.put("/VR/books/update_book", status_code=status.HTTP_204_NO_CONTENT)
 def update_book(book_request: BookRequest):
     for book in BOOKS:
         if book["id"] == book_request.id:
             book.update(book_request)
 
 
-@app.delete("/VR/books/delete_book/")
+@app.delete("/VR/books/delete_book/", status_code=status.HTTP_204_NO_CONTENT)
 def delete_book(book_id: int = Query(gt=0)):
     book_popped = None
     for index, book in enumerate(BOOKS):
@@ -98,7 +99,7 @@ def delete_book(book_id: int = Query(gt=0)):
         raise HTTPException(404, "Item not found")
 
 
-@app.post("/VR/books/create_book")
+@app.post("/VR/books/create_book", status_code=status.HTTP_201_CREATED)
 def add_book(book_request: BookRequest):
     new_book = Book(**book_request.model_dump())
     BOOKS.append(add_book_id(new_book._asdict()))
