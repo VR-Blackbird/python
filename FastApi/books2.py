@@ -1,6 +1,6 @@
 from typing import Optional
 
-from fastapi import FastAPI, Path, Query
+from fastapi import FastAPI, Path, Query, HTTPException
 from pydantic import BaseModel, Field
 from collections import namedtuple
 
@@ -63,6 +63,7 @@ def get_book_by_id(book_id: int = Path(gt=0)):
     for book in BOOKS:
         if book["id"] == book_id:
             return book
+    raise HTTPException(404, "Book not found")
 
 
 @app.get("/VR/books/rating/")
@@ -86,12 +87,15 @@ def update_book(book_request: BookRequest):
             book.update(book_request)
 
 
-@app.delete("/VR/books/delete_book")
+@app.delete("/VR/books/delete_book/")
 def delete_book(book_id: int = Query(gt=0)):
+    book_popped = None
     for index, book in enumerate(BOOKS):
         if book["id"] == book_id:
-            BOOKS.pop(index)
+            book_popped = BOOKS.pop(index)
             break
+    if not book_popped:
+        raise HTTPException(404, "Item not found")
 
 
 @app.post("/VR/books/create_book")
