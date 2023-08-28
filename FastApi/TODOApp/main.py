@@ -43,9 +43,28 @@ def read_by_id(db: db_dependency, todo_id: int = Path(gt=0)):
 
 @app.post("/VR/todos/create_todo", status_code=status.HTTP_201_CREATED)
 def create_todo(db: db_dependency, todo_request: TodoRequest):
-    check_existing = db.query(Todos).filter(Todos.title == todo_request.title).first()
+    check_existing = (
+        db.query(Todos)
+        .filter(
+            Todos.title == todo_request.title,
+            Todos.description == todo_request.description,
+        )
+        .first()
+    )
+    todo_model = Todos(**todo_request.model_dump())
     if check_existing:
         raise HTTPException(409, "Todo already exists")
-    todo_model = Todos(**todo_request.model_dump())
+
     db.add(todo_model)
+    db.commit()
+
+
+@app.put("/VR/todos/update_todo", status_code=status.HTTP_204_NO_CONTENT)
+def update_todo(db: db_dependency, todo_id: int, todo_request: TodoRequest):
+    todo_model = db.query(Todos).filter(Todos.id == todo_id).first()
+    if not todo_model:
+        raise HTTPException(204, "Todo not found")
+    db.delete(todo_model)
+    new_todo = Todos(**todo_request.model_dump())
+    db.add(new_todo)
     db.commit()
