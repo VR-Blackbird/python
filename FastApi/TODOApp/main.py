@@ -1,6 +1,7 @@
 from typing import Annotated
 from sqlalchemy.orm import Session
-from fastapi import FastAPI, Depends
+from fastapi import FastAPI, Depends, HTTPException, Path
+from starlette import status
 from models import Base, Todos
 from database import engine, session_local
 
@@ -19,6 +20,14 @@ def get_db():
 db_dependency = Annotated[Session, Depends(get_db)]
 
 
-@app.get("/VR/books")
-def read_books(db: db_dependency):
+@app.get("/VR/todos")
+def read_all_todos(db: db_dependency):
     return db.query(Todos).all()
+
+
+@app.get("/VR/todos/{todo_id}", status_code=status.HTTP_200_OK)
+def read_by_id(db: db_dependency, todo_id: int = Path(gt=0)):
+    todo_model = db.query(Todos).filter(Todos.id == todo_id).first()
+    if todo_model:
+        return todo_model
+    raise HTTPException(404, "Todo not found")
