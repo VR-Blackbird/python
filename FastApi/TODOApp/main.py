@@ -64,7 +64,9 @@ def update_todo(db: db_dependency, todo_id: int, todo_request: TodoRequest):
     todo_model = db.query(Todos).filter(Todos.id == todo_id).first()
     if not todo_model:
         raise HTTPException(204, "Todo not found")
-    db.delete(todo_model)
-    new_todo = Todos(**todo_request.model_dump())
-    db.add(new_todo)
+    table = Todos.__table__
+    statement = (
+        table.update().where(Todos.id == todo_id).values(**todo_request.model_dump())
+    )
+    db.execute(statement)
     db.commit()
