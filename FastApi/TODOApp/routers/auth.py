@@ -1,7 +1,9 @@
 from fastapi import APIRouter
 from pydantic import BaseModel, Field
 from models import User
+from starlette import status
 from passlib.context import CryptContext
+from routers import todos
 
 router = APIRouter()
 
@@ -17,8 +19,8 @@ class CreateUserRequest(BaseModel):
     role: str
 
 
-@router.post("/auth/")
-def create_user(create_user_request: CreateUserRequest):
+@router.post("/auth/", status_code=status.HTTP_201_CREATED)
+def create_user(db: todos.db_dependency, create_user_request: CreateUserRequest):
     create_user_model = User(
         email=create_user_request.email,
         username=create_user_request.username,
@@ -30,5 +32,5 @@ def create_user(create_user_request: CreateUserRequest):
         ),
         is_active=True,
     )
-
-    return create_user_model
+    db.add(create_user_model)
+    db.commit()
