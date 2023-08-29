@@ -70,3 +70,13 @@ def update_todo(db: db_dependency, todo_id: int, todo_request: TodoRequest):
     )
     db.execute(statement)
     db.commit()
+
+
+@app.delete("/VR/todos/delete_todo", status_code=status.HTTP_204_NO_CONTENT)
+def delete_todo(db: db_dependency, todo_id: int):
+    todo_model = db.query(Todos).filter(Todos.id == todo_id).first()
+    if not todo_model:
+        raise HTTPException(204, "Todo not found")
+
+    db.delete(todo_model)
+    db.commit()
