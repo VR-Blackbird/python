@@ -5,9 +5,12 @@ from pydantic import BaseModel, Field
 from starlette import status
 from models import Base, Todos
 from database import engine, session_local
+from routers import auth
 
 app = FastAPI()
 Base.metadata.create_all(bind=engine)
+
+app.include_router(auth.router)
 
 
 def get_db():
