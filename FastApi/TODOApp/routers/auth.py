@@ -1,13 +1,14 @@
 from typing import Annotated
 from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.orm import Session
 from pydantic import BaseModel, Field
 from models import User
 from datetime import timedelta, datetime
 from starlette import status
+from database import session_local
 from passlib.context import CryptContext
 from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
 from jose import jwt, JWTError
-from routers import todos
 
 
 router = APIRouter(prefix="/auth", tags=["auth"])
@@ -32,7 +33,18 @@ class Token(BaseModel):
     token_type: str
 
 
-def authenticate_user(username: str, password: str, db: todos.db_dependency):
+def get_db():
+    db = session_local()
+    try:
+        yield db
+    finally:
+        db.close()
+
+
+db_dependency = Annotated[Session, Depends(get_db)]
+
+
+def authenticate_user(username: str, password: str, db: db_dependency):
     user = db.query(User).filter(User.username == username).first()
     if user and bcrypt_context.verify(f"{username}:{password}", user.hashed_password):
         return user
@@ -64,7 +76,7 @@ def verify_user(token: Annotated[str, Depends(oauth2_bearer)]):
 
 
 @router.post("/", status_code=status.HTTP_201_CREATED)
-def create_user(db: todos.db_dependency, create_user_request: CreateUserRequest):
+def create_user(db: db_dependency, create_user_request: CreateUserRequest):
     create_user_model = User(
         email=create_user_request.email,
         username=create_user_request.username,
@@ -82,7 +94,7 @@ def create_user(db: todos.db_dependency, create_user_request: CreateUserRequest)
 
 @router.post("/token", response_model=Token)
 def get_access_token(
-    form: Annotated[OAuth2PasswordRequestForm, Depends()], db: todos.db_dependency
+    form: Annotated[OAuth2PasswordRequestForm, Depends()], db: db_dependency
 ):
     user = authenticate_user(form.username, form.password, db)
     if not user:

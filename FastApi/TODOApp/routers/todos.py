@@ -5,6 +5,7 @@ from pydantic import BaseModel, Field
 from starlette import status
 from models import Todos
 from database import session_local
+from routers.auth import verify_user
 
 router = APIRouter()
 
@@ -18,6 +19,7 @@ def get_db():
 
 
 db_dependency = Annotated[Session, Depends(get_db)]
+user_dependency = Annotated[dict, Depends(verify_user)]
 
 
 class TodoRequest(BaseModel):
@@ -28,7 +30,7 @@ class TodoRequest(BaseModel):
 
 
 @router.get("/VR/todos")
-def read_all_todos(db: db_dependency):
+def read_all_todos(user: user_dependency, db: db_dependency):
     return db.query(Todos).all()
 
 
@@ -41,7 +43,9 @@ def read_by_id(db: db_dependency, todo_id: int = Path(gt=0)):
 
 
 @router.post("/VR/todos/create_todo", status_code=status.HTTP_201_CREATED)
-def create_todo(db: db_dependency, todo_request: TodoRequest):
+def create_todo(user: user_dependency, db: db_dependency, todo_request: TodoRequest):
+    if not user:
+        raise HTTPException(404, "User not found")
     check_existing = (
         db.query(Todos)
         .filter(
@@ -50,7 +54,7 @@ def create_todo(db: db_dependency, todo_request: TodoRequest):
         )
         .first()
     )
-    todo_model = Todos(**todo_request.model_dump())
+    todo_model = Todos(**todo_request.model_dump(), owner_id=user.get("id"))
     if check_existing:
         raise HTTPException(409, "Todo already exists")
 
