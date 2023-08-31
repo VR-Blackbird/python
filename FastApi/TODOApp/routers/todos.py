@@ -29,9 +29,9 @@ class TodoRequest(BaseModel):
     complete: Optional[bool] = None
 
 
-@router.get("/VR/todos")
+@router.get("/VR/todos", status_code=status.HTTP_200_OK)
 def read_all_todos(user: user_dependency, db: db_dependency):
-    return db.query(Todos).all()
+    return db.query(Todos).filter(Todos.owner_id == user.get("id", "")).all()
 
 
 @router.get("/VR/todos/{todo_id}", status_code=status.HTTP_200_OK)
