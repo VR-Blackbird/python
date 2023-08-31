@@ -35,8 +35,14 @@ def read_all_todos(user: user_dependency, db: db_dependency):
 
 
 @router.get("/VR/todos/{todo_id}", status_code=status.HTTP_200_OK)
-def read_by_id(db: db_dependency, todo_id: int = Path(gt=0)):
-    todo_model = db.query(Todos).filter(Todos.id == todo_id).first()
+def read_by_id(user: user_dependency, db: db_dependency, todo_id: int = Path(gt=0)):
+    if not user:
+        raise HTTPException(404, "User not found")
+    todo_model = (
+        db.query(Todos)
+        .filter(Todos.id == todo_id, Todos.owner_id == user.get("id", ""))
+        .first()
+    )
     if todo_model:
         return todo_model
     raise HTTPException(404, "Todo not found")
