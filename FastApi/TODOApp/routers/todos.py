@@ -86,7 +86,9 @@ def update_todo(
 
 
 @router.delete("/VR/todos/delete_todo", status_code=status.HTTP_204_NO_CONTENT)
-def delete_todo(db: db_dependency, todo_id: int):
+def delete_todo(user: user_dependency, db: db_dependency, todo_id: int):
+    if not user:
+        raise HTTPException(404, "User not found")
     todo_model = db.query(Todos).filter(Todos.id == todo_id).first()
     if not todo_model:
         raise HTTPException(204, "Todo not found")
