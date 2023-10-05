@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 import requests
 import io
 import time
-
+from bs4 import BeautifulSoup
 # Set ChromeDriver options (headless mode)
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--headless")
@@ -67,13 +67,34 @@ def download_image(download_folder, src, file_name):
     image = requests.get(src).content
     image_bin = io.BytesIO(image)
     image_inside = Image.open(image_bin)
+    if not os.path.exists(download_folder):
+        os.makedirs(download_folder)
     path = os.path.join(download_folder, file_name)
     with open(path, "wb") as f:
         image_inside.save(f, "JPEG")
 
 puppies = "https://www.google.com/search?q=puppies+desktop+wallpaper+hd&tbm=isch&ved=2ahUKEwjeh8Pc-tyBAxWH5TgGHQmBAAcQ2-cCegQIABAA&oq=puppies+desktop+wall&gs_lcp=CgNpbWcQARgBMgUIABCABDIFCAAQgAQyBggAEAUQHjIGCAAQBRAeMgYIABAFEB4yBggAEAgQHjIGCAAQCBAeMgYIABAIEB4yBggAEAgQHjIGCAAQCBAeOgcIABCKBRBDOgsIABCABBCxAxCDAToICAAQgAQQsQM6CggAEIoFELEDEENQjwtYpCtglDRoAHAAeACAAWCIAdAMkgECMjGYAQCgAQGqAQtnd3Mtd2l6LWltZ7ABAMABAQ&sclient=img&ei=WaYdZZ73NIfL4-EPiYKCOA&bih=939&biw=1920"
 max_images_to_download = 20
-download_folder = os.getcwd() + "/" + "puppies"
-
+download_folder = os.getcwd() + "/" + "puppies2"
+#
 image_urls = get_all_images(wd, puppies, 1, max_images_to_download)
 download_images(download_folder, image_urls)
+
+
+####################    With Beautiful Soup   #######################
+
+
+# def getdata(url):
+#     r = requests.get(url)
+#     return r.text
+#
+#
+# htmldata = getdata(puppies)
+# soup = BeautifulSoup(htmldata, 'html.parser')
+# for i, item in enumerate(soup.find_all('img')):
+#     print(i+1)
+#     src = item['src']
+#     if "gif" not in src:
+#         download_image(download_folder, src, f"puppy{i+1}.{'jpeg'}")
+
+#_______________________________________________________________________
