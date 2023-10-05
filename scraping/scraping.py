@@ -31,7 +31,7 @@ def get_all_images(driver, url, delay, max_images):
         scroll_down(driver)
         time.sleep(delay)
         thumbnails = driver.find_elements(By.CLASS_NAME, "Q4LuWd")
-        for image in thumbnails[len(image_urls):]:
+        for image in thumbnails:
             if len(image_urls) == max_images:
                 break
             print("Length - ", len(image_urls))
