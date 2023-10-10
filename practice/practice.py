@@ -25,3 +25,17 @@ while total > 0:
 
 # Print the distribution of candies to children
 print(children)
+
+
+class A:
+    x = [1,2,3]
+
+class B(A):
+    pass
+
+b = B()
+A.x[1] = 19
+print(b.x)
+
+
+

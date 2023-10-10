@@ -1,13 +1,17 @@
 from typing import Annotated, Optional
 from sqlalchemy.orm import Session
-from fastapi import APIRouter, Depends, HTTPException, Path
+from fastapi import APIRouter, Depends, HTTPException, Path, Request
 from pydantic import BaseModel, Field
 from starlette import status
 from models import Todos
 from database import session_local
 from routers.auth import verify_user
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
 
 router = APIRouter()
+
+templates = Jinja2Templates(directory="templates")
 
 
 def get_db():
@@ -27,6 +31,11 @@ class TodoRequest(BaseModel):
     description: str = Field(min_length=5, max_length=200)
     priority: int = Field(gt=0, lt=6)
     complete: Optional[bool] = None
+
+
+@router.get("/test")
+def test(request: Request):
+    return templates.TemplateResponse("home.html", {"request": request})
 
 
 @router.get("/VR/todos", status_code=status.HTTP_200_OK)
