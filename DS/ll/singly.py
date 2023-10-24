@@ -127,6 +127,28 @@ class LinkedList:
 
         return popped_value
 
+    def remove(self, index):  # O(n)
+        if index >= self.length or index < 0:
+            return "Index value exceeds"
+        elif index == 0:
+            popped = self.pop_left()
+        elif index == self.length - 1:
+            popped = self.pop()
+
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+
+        else:
+            int_index = 0
+            current = self.head
+            while abs(int_index - index) != 1:
+                current = current.next
+                int_index += 1
+            curr_node = current.next
+            current.next = curr_node.next
+            del curr_node
+
 
 l = LinkedList(10)
 l.create_list([11, 12, 13, 14])
