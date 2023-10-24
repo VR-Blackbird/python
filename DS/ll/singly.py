@@ -20,24 +20,24 @@ class LinkedList:
         self.tail = node
         self.length = 1
 
-    def create_list(self, value_list): # O(n^2)
+    def create_list(self, value_list):  # O(n^2)
         for value in value_list:
             self.append(value)
 
-    def append(self, value): # O(n)
+    def append(self, value):  # O(n)
         node = Node(value)
         self.tail.next = node
         self.tail = node
         self.length += 1
 
-    def prepend(self, value): # O(n)
+    def prepend(self, value):  # O(n)
         node = Node(value)
         prev_head = self.head
         self.head = node
         self.head.next = prev_head
         self.length += 1
 
-    def insert(self, value, position): # O(n)
+    def insert(self, value, position):  # O(n)
         if position > self.length:
             print(f"Index value {position} exceeds the length of Linked List")
 
@@ -54,7 +54,7 @@ class LinkedList:
         else:
             print("Try other methods for inserting in beginning or end")
 
-    def search(self, value): # O(n)
+    def search(self, value):  # O(n)
         current = self.head
         index = 0
 
@@ -66,7 +66,7 @@ class LinkedList:
 
         return -1
 
-    def get(self, index): # O(n)
+    def get(self, index):  # O(n)
         current = self.head
         int_index = 0
 
@@ -76,7 +76,7 @@ class LinkedList:
             current = current.next
             int_index += 1
 
-    def set(self, index, value): # O(n)
+    def set(self, index, value):  # O(n)
         current = self.head
         int_index = 0
 
@@ -86,7 +86,7 @@ class LinkedList:
             current = current.next
             int_index += 1
 
-    def pop_left(self):   # O(1)
+    def pop_left(self):  # O(1)
         current = self.head
 
         if self.length == 0:
@@ -103,21 +103,27 @@ class LinkedList:
         self.length -= 1
         return popped_value
 
-    def pop(self): # O(n)
+    def pop(self):  # O(n)
         current = self.head
 
-        if not self.tail:
+        if self.length == 0:
             return None
 
         popped_node = self.tail
+        if self.length == 1:
+            self.head = None
+            self.tail = None
 
-        while current.next != self.tail:  
-            current = current.next
+        else:
+            while current.next != self.tail:
+                current = current.next
 
-        self.tail = current
-        self.tail.next = None
+            self.tail = current
+            self.tail.next = None
         popped_value = popped_node.value
         del popped_node
+
+        self.length -= 1
 
         return popped_value
 
