@@ -20,17 +20,17 @@ class LinkedList:
         self.tail = node
         self.length = 1
 
-    def create_list(self, value_list):  # O(n^2)
+    def create_list(self, value_list):  # O(n)
         for value in value_list:
             self.append(value)
 
-    def append(self, value):  # O(n)
+    def append(self, value):  # O(1)
         node = Node(value)
         self.tail.next = node
         self.tail = node
         self.length += 1
 
-    def prepend(self, value):  # O(n)
+    def prepend(self, value):  # O(1)
         node = Node(value)
         prev_head = self.head
         self.head = node
