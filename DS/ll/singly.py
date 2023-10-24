@@ -20,36 +20,24 @@ class LinkedList:
         self.tail = node
         self.length = 1
 
-    def create_list(self, value_list):
+    def create_list(self, value_list): # O(n^2)
         for value in value_list:
-            node = Node(value)
-            if not self.head.next:
-                self.head.next = node
-            else:
-                traverse = self.head
-                while True:
-                    if not traverse.next:
-                        traverse.next = node
-                        break
-                    else:
-                        traverse = traverse.next
-            self.length += 1
-            self.tail = node
+            self.append(value)
 
-    def append(self, value):
+    def append(self, value): # O(n)
         node = Node(value)
         self.tail.next = node
         self.tail = node
         self.length += 1
 
-    def prepend(self, value):
+    def prepend(self, value): # O(n)
         node = Node(value)
         prev_head = self.head
         self.head = node
         self.head.next = prev_head
         self.length += 1
 
-    def insert(self, value, position):
+    def insert(self, value, position): # O(n)
         if position > self.length:
             print(f"Index value {position} exceeds the length of Linked List")
 
@@ -62,10 +50,11 @@ class LinkedList:
             node = Node(value)
             node.next = ptr.next
             ptr.next = node
+            self.length += 1
         else:
             print("Try other methods for inserting in beginning or end")
 
-    def search(self, value):
+    def search(self, value): # O(n)
         current = self.head
         index = 0
 
@@ -76,8 +65,8 @@ class LinkedList:
             index += 1
 
         return -1
-    
-    def get(self, index):
+
+    def get(self, index): # O(n)
         current = self.head
         int_index = 0
 
@@ -86,9 +75,8 @@ class LinkedList:
                 return current.value
             current = current.next
             int_index += 1
-        
-    def set(self, index, value):
 
+    def set(self, index, value): # O(n)
         current = self.head
         int_index = 0
 
@@ -97,8 +85,41 @@ class LinkedList:
                 current.value = value
             current = current.next
             int_index += 1
-        
-        
+
+    def pop_left(self):   # O(1)
+        current = self.head
+
+        if self.length == 0:
+            return None
+
+        popped_value = current.value
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+
+        else:
+            self.head = current.next
+        del current
+        self.length -= 1
+        return popped_value
+
+    def pop(self): # O(n)
+        current = self.head
+
+        if not self.tail:
+            return None
+
+        popped_node = self.tail
+
+        while current.next != self.tail:  
+            current = current.next
+
+        self.tail = current
+        self.tail.next = None
+        popped_value = popped_node.value
+        del popped_node
+
+        return popped_value
 
 
 l = LinkedList(10)
@@ -115,3 +136,4 @@ print(l.search(12))  # Found
 
 print(l.get(index=2))
 l.set(index=2, value=300)
+print(l.length)
