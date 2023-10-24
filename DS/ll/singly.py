@@ -131,9 +131,9 @@ class LinkedList:
         if index >= self.length or index < 0:
             return "Index value exceeds"
         elif index == 0:
-            popped = self.pop_left()
+            _ = self.pop_left()
         elif index == self.length - 1:
-            popped = self.pop()
+            _ = self.pop()
 
         if self.length == 1:
             self.head = None
@@ -148,6 +148,7 @@ class LinkedList:
             curr_node = current.next
             current.next = curr_node.next
             del curr_node
+            self.length -= 1
 
 
 l = LinkedList(10)
