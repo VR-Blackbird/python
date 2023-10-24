@@ -86,6 +86,19 @@ class LinkedList:
                 return current.value
             current = current.next
             int_index += 1
+        
+    def set(self, index, value):
+
+        current = self.head
+        int_index = 0
+
+        while current:
+            if int_index == index:
+                current.value = value
+            current = current.next
+            int_index += 1
+        
+        
 
 
 l = LinkedList(10)
@@ -101,3 +114,4 @@ print(l.search(190))  # Not found
 print(l.search(12))  # Found
 
 print(l.get(index=2))
+l.set(index=2, value=300)
