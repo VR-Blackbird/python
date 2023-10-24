@@ -76,6 +76,16 @@ class LinkedList:
             index += 1
 
         return -1
+    
+    def get(self, index):
+        current = self.head
+        int_index = 0
+
+        while current:
+            if int_index == index:
+                return current.value
+            current = current.next
+            int_index += 1
 
 
 l = LinkedList(10)
@@ -89,3 +99,5 @@ l.prepend(100)
 print(l.head)
 print(l.search(190))  # Not found
 print(l.search(12))  # Found
+
+print(l.get(index=2))
