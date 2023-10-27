@@ -24,10 +24,15 @@ class LinkedList:
         for value in value_list:
             self.append(value)
 
-    def append(self, value):  # O(1)
+    def append(self, value):
         node = Node(value)
-        self.tail.next = node
+        if not self.head:
+            self.head = node
+        else:
+            self.tail.next = node
+
         self.tail = node
+
         self.length += 1
 
     def prepend(self, value):  # O(1)
@@ -126,29 +131,39 @@ class LinkedList:
         self.length -= 1
 
         return popped_value
-
-    def remove(self, index):  # O(n)
-        if index >= self.length or index < 0:
-            return "Index value exceeds"
-        elif index == 0:
-            _ = self.pop_left()
-        elif index == self.length - 1:
-            _ = self.pop()
-
-        if self.length == 1:
-            self.head = None
-            self.tail = None
-
+    
+    def remove(self, index):
+        curr = self.head
+        
+        if index == 0:
+            
+            if self.length == 1:
+                self.head = None
+                self.tail = None
+            
+            else:
+                curr_head = self.head
+                self.head = curr_head.next
+                
+                del curr_head
+            
         else:
-            int_index = 0
-            current = self.head
-            while abs(int_index - index) != 1:
-                current = current.next
-                int_index += 1
-            curr_node = current.next
-            current.next = curr_node.next
-            del curr_node
+        
+            idx_start = 0
+            
+            while idx_start != index-1:
+                curr = curr.next
+                idx_start += 1
+            deleting_node = curr.next
+            curr.next = deleting_node.next
             self.length -= 1
+            
+            if idx_start == self.length - 1:
+                self.tail = curr
+            
+            del deleting_node
+            
+
 
 
 l = LinkedList(10)
