@@ -163,7 +163,18 @@ class LinkedList:
             
             del deleting_node
             
+    def reverse(self):
 
+        prev_node = None
+        curr = self.head
+
+        while curr:
+            next_node = curr.next
+            curr.next = prev_node
+            prev_node = curr
+            curr = next_node
+
+        self.head, self.tail = self.tail, self.head
 
 
 l = LinkedList(10)
