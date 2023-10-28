@@ -1,9 +1,3 @@
-from collections import namedtuple
-
-
-# Node = namedtuple("Node", ["value", "next"])
-
-
 class Node:
     def __init__(self, value):
         self.value = value
@@ -13,12 +7,53 @@ class Node:
         return f"Node({self.value}, {self.next})"
 
 
+def mergeTwoLists(l1, l2):
+        """
+        :type list1: Optional[ListNode]
+        :type list2: Optional[ListNode]
+        :rtype: Optional[ListNode]
+        """
+        curr = l1.head
+        curr2 = l2.head
+        prev = curr
+        if not curr:
+            l1.head = curr2
+            return curr2
+        elif not curr2:
+            l1.head = curr
+            return curr
+        
+        while curr:
+
+            while curr2 and curr2.value <= curr.value:
+                node = Node(curr2.value)
+                node.next = curr
+
+                if prev == curr:
+                    l1.head = node
+                else:
+                    prev.next = node
+
+                next_curr = curr2.next
+                del curr2
+                curr2 = next_curr
+                l2.head = curr2
+                prev = prev.next
+
+            curr2 = l2.head
+            prev = curr
+
+            curr = curr.next
+        l1.tail.next = l2.head
+        del l2
+        return l1
+
+
 class LinkedList:
-    def __init__(self, value):
-        node = Node(value)
-        self.head = node
-        self.tail = node
-        self.length = 1
+    def __init__(self):
+        self.head = None
+        self.tail = None
+        self.length = 0
 
     def create_list(self, value_list):  # O(n)
         for value in value_list:
@@ -131,40 +166,37 @@ class LinkedList:
         self.length -= 1
 
         return popped_value
-    
+
     def remove(self, index):
         curr = self.head
-        
+
         if index == 0:
-            
             if self.length == 1:
                 self.head = None
                 self.tail = None
-            
+
             else:
                 curr_head = self.head
                 self.head = curr_head.next
-                
+
                 del curr_head
-            
+
         else:
-        
             idx_start = 0
-            
-            while idx_start != index-1:
+
+            while idx_start != index - 1:
                 curr = curr.next
                 idx_start += 1
             deleting_node = curr.next
             curr.next = deleting_node.next
             self.length -= 1
-            
+
             if idx_start == self.length - 1:
                 self.tail = curr
-            
-            del deleting_node
-            
-    def reverse(self):
 
+            del deleting_node
+
+    def reverse(self):
         prev_node = None
         curr = self.head
 
@@ -176,19 +208,40 @@ class LinkedList:
 
         self.head, self.tail = self.tail, self.head
 
+    def find_middle(self):
+        # TODO
 
-l = LinkedList(10)
-l.create_list([11, 12, 13, 14])
-print(l.head)
-l.insert(111, 6)
-l.insert(111, 5)
-l.insert(111, 2)
-l.append(112)
-l.prepend(100)
-print(l.head)
-print(l.search(190))  # Not found
-print(l.search(12))  # Found
+        curr = self.head
+        mid = self.length // 2
+        idx = 0
 
-print(l.get(index=2))
-l.set(index=2, value=300)
-print(l.length)
+        while idx != mid:
+            curr = curr.next
+            idx += 1
+        return curr
+
+    def remove_duplicates(self):
+        # TODO
+        visited = set()
+        curr = self.head
+        prev = curr
+
+        while curr:
+            if curr.value in visited:
+                prev.next = curr.next
+                if not curr.next:
+                    self.tail = prev
+                    self.tail.next = None
+                self.length -= 1
+            else:
+                visited.add(curr.value)
+                prev = curr
+            curr = prev.next
+
+
+l1 = LinkedList()
+# l1.create_list([1, 2, 4])
+l2 = LinkedList()
+l2.create_list([0])
+# l.remove_duplicates()
+mergeTwoLists(l1, l2)
