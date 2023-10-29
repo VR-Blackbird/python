@@ -8,45 +8,44 @@ class Node:
 
 
 def mergeTwoLists(l1, l2):
-        """
-        :type list1: Optional[ListNode]
-        :type list2: Optional[ListNode]
-        :rtype: Optional[ListNode]
-        """
-        curr = l1.head
+    """
+    :type list1: Optional[ListNode]
+    :type list2: Optional[ListNode]
+    :rtype: Optional[ListNode]
+    """
+    curr = l1.head
+    curr2 = l2.head
+    prev = curr
+    if not curr:
+        l1.head = curr2
+        return curr2
+    elif not curr2:
+        l1.head = curr
+        return curr
+
+    while curr:
+        while curr2 and curr2.value <= curr.value:
+            node = Node(curr2.value)
+            node.next = curr
+
+            if prev == curr:
+                l1.head = node
+            else:
+                prev.next = node
+
+            next_curr = curr2.next
+            del curr2
+            curr2 = next_curr
+            l2.head = curr2
+            prev = prev.next
+
         curr2 = l2.head
         prev = curr
-        if not curr:
-            l1.head = curr2
-            return curr2
-        elif not curr2:
-            l1.head = curr
-            return curr
-        
-        while curr:
 
-            while curr2 and curr2.value <= curr.value:
-                node = Node(curr2.value)
-                node.next = curr
-
-                if prev == curr:
-                    l1.head = node
-                else:
-                    prev.next = node
-
-                next_curr = curr2.next
-                del curr2
-                curr2 = next_curr
-                l2.head = curr2
-                prev = prev.next
-
-            curr2 = l2.head
-            prev = curr
-
-            curr = curr.next
-        l1.tail.next = l2.head
-        del l2
-        return l1
+        curr = curr.next
+    l1.tail.next = l2.head
+    del l2
+    return l1
 
 
 class LinkedList:
@@ -238,10 +237,25 @@ class LinkedList:
                 prev = curr
             curr = prev.next
 
+    def delete(self, val):
+        curr = self.head
+
+        prev = curr
+        while curr:
+            if curr.value == val:
+                if curr == self.tail:
+                    prev.next = curr.next
+                    self.tail = prev
+                elif curr == self.head:
+                    self.head = curr.next
+
+            prev = curr
+            curr = curr.next
+
 
 l1 = LinkedList()
-# l1.create_list([1, 2, 4])
+l1.create_list([2, 1, 2, 4, 2])
 l2 = LinkedList()
-l2.create_list([0])
+l2.create_list([2])
 # l.remove_duplicates()
 mergeTwoLists(l1, l2)
