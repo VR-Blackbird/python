@@ -116,6 +116,19 @@ class CSLL:
                 self.tail.next = self.head
             self.length -= 1
 
+    def pop(self):
+        curr = self.head
+        if curr:
+            if self.length == 1:
+                self.head = None
+                self.tail = None
+            else:
+                while curr.next != self.tail:
+                    curr = curr.next
+                curr.next = self.head
+                self.tail = curr
+            self.length -= 1
+
 
 cl = CSLL()
 cl.prepend(20)
