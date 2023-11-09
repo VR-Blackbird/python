@@ -48,5 +48,24 @@ class CSLL:
             self.tail.next = self.head
         self.length += 1
 
+    def insert(self, value, position):
+        if position == 0:
+            self.prepend(value)
+        elif position >= self.length:
+            raise IndexError(f"Invalid Index - Length of linked list is {self.length}")
+        elif position == self.length - 1:
+            self.append(value)
+        else:
+            node = Node(value)
+            curr = self.head
+            pos = 0
+            while abs(pos - position) > 1:
+                curr = curr.next
+                pos += 1
+            next = curr.next
+            curr.next = node
+            node.next = next
+            
+        
 
 cl = CSLL()
