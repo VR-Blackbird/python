@@ -65,7 +65,22 @@ class CSLL:
             next = curr.next
             curr.next = node
             node.next = next
+
+    def traverse(self):
+        curr = self.head
+        while curr:
+            print(curr.value)
+            if curr.next == self.head:
+                break
+            curr = curr.next
+        
+
             
         
 
 cl = CSLL()
+cl.prepend(20)
+cl.append(90)
+cl.append(19)
+cl.append(29)
+cl.append(49)
