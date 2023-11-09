@@ -3,6 +3,9 @@ class Node:
         self.value = value
         self.next = None
 
+    def __repr__(self) -> str:
+        return str(self.value)
+
 
 class CSLL:
     def __init__(self) -> None:
@@ -87,7 +90,7 @@ class CSLL:
         pos = 0
         while curr:
             if position == pos:
-                return curr.value
+                return curr
             curr = curr.next
             pos += 1
 
@@ -128,6 +131,18 @@ class CSLL:
                 curr.next = self.head
                 self.tail = curr
             self.length -= 1
+
+    def remove(self, index):
+        curr = self.head
+        if curr:
+            if index == 0:
+                self.pop_first()
+            elif index == self.length - 1:
+                self.pop()
+            else:
+                prev = self.get(index - 1)
+                prev.next = prev.next.next
+                self.length -= 1
 
 
 cl = CSLL()
