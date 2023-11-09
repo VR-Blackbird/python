@@ -144,6 +144,12 @@ class CSLL:
                 prev.next = prev.next.next
                 self.length -= 1
 
+    def delete_all(self):
+        if self.head:
+            self.head = None
+            self.tail = None
+            self.length = 0
+
 
 cl = CSLL()
 cl.prepend(20)
