@@ -69,10 +69,37 @@ class CSLL:
     def traverse(self):
         curr = self.head
         while curr:
-            print(curr.value)
+            yield curr.value
             if curr.next == self.head:
                 break
             curr = curr.next
+
+    def search(self, value):
+        if value in self.traverse():
+            return True
+        return False
+
+    def get(self, position):
+        curr = self.head
+
+        pos = 0
+        while curr:
+            if position == pos:
+                return curr.value
+            curr = curr.next
+            pos += 1
+
+    def set(self, position, value):
+        curr = self.head
+        pos = 0
+        while curr:
+            if curr.next == self.head:
+                break
+            if position == pos:
+                curr.value = value
+
+            curr = curr.next
+            pos += 1
 
 
 cl = CSLL()
