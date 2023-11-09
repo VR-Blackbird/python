@@ -66,6 +66,8 @@ class CSLL:
             curr.next = node
             node.next = next
 
+        self.length += 1
+
     def traverse(self):
         curr = self.head
         while curr:
@@ -100,6 +102,19 @@ class CSLL:
 
             curr = curr.next
             pos += 1
+
+    def pop_first(self):
+        curr = self.head
+        if curr:
+            if self.length == 1:
+                self.head = None
+                self.tail = None
+
+            else:
+                new_head = curr.next
+                self.head = new_head
+                self.tail.next = self.head
+            self.length -= 1
 
 
 cl = CSLL()
