@@ -73,10 +73,7 @@ class CSLL:
             if curr.next == self.head:
                 break
             curr = curr.next
-        
 
-            
-        
 
 cl = CSLL()
 cl.prepend(20)
