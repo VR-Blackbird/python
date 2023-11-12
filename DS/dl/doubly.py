@@ -67,6 +67,7 @@ class DLL:
             node.right = curr
             curr.left = node
             prev.right = node
+        self.length += 1
 
     def reverse(self):
         if self.head:
@@ -76,6 +77,44 @@ class DLL:
                 curr = curr.right
             self.head, self.tail = self.tail, self.head
             print("Linked list reversed")
+
+    def pop_first(self):
+        if self.head:
+            self.head = self.head.right
+
+            self.length -= 1
+
+    def pop(self):
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+            self.length -= 1
+        if self.head:
+            last = self.tail.left
+            self.tail = last
+            last.right = None
+            self.length -= 1
+
+    def remove(self, position):
+        if position >= self.length:
+            return
+
+        if position == 0:
+            self.pop_first()
+        elif position == self.length - 1:
+            self.pop()
+
+        else:
+            curr = self.head
+            count = 0
+            while count != position:
+                curr = curr.right
+                count += 1
+            prev = curr.left
+            next = curr.right
+            prev.right = next
+            next.left = prev
+        self.length -= 1
 
 
 d = DLL()
