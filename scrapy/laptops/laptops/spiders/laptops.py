@@ -35,7 +35,7 @@ class LaptopsSpider(scrapy.Spider):
                 this_page = products_per_page
                 remaining_products -= products_per_page
             else:
-                this_page = remaining_products
+                this_ipage = remaining_products
             chunks_count = math.ceil(this_page/ products_per_chunk)
             if remaining_products >= products_per_page:
                 remaining_products -= products_per_page
