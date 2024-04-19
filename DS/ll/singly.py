@@ -54,6 +54,18 @@ class LinkedList:
         self.tail = None
         self.length = 0
 
+    def __repr__(self) -> str:
+        result = ""
+
+        curr = self.head
+        while curr:
+            result += f"{curr.value}"
+            if curr.next:
+                result += "->"
+            curr = curr.next
+
+        return result
+
     def create_list(self, value_list):  # O(n)
         for value in value_list:
             self.append(value)
